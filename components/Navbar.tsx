@@ -1,9 +1,9 @@
 import { CloseIcon,SearchIcon } from "@chakra-ui/icons";
-import { Box, Button, Flex, Link,Slide, Stack, useDisclosure } from "@chakra-ui/react";
+import { Box, Button, Flex, Link, Stack, useDisclosure } from "@chakra-ui/react";
 import { useState } from "react";
+import {AnimatePresence,motion} from 'framer-motion'
 
 const Navbar = () => {
-  const { isOpen, onToggle } = useDisclosure()
   const [nav, setNav] = useState(false)
   return ( 
     <>
@@ -59,7 +59,8 @@ const Navbar = () => {
         </Button>
         {
           nav &&
-          <Stack h='60vh' textAlign='center' position='absolute' top='0' gap='16px' bg='brand.bg' color='gray.700' w='100vw' left='0' fontSize='20px'>
+          <AnimatePresence>
+            <Stack as={motion.div} initial={{ opacity: 0, y: '-70vh' }} animate={{ opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } }} exit={{ y: '70vh'}} h='60vh' textAlign='center' position='absolute' top='0' gap='16px' bg='brand.bg' color='gray.700' w='100vw' left='0' fontSize='20px'>
               <Box mx='auto' as='button' onClick={() => setNav(!nav)} p='30px' color='red.300' fontSize='24px' textTransform='uppercase'>
                 {/* Close  */}
                 <CloseIcon/>
@@ -80,7 +81,8 @@ const Navbar = () => {
                   About
                 </Link>
               </Box>
-          </Stack>
+            </Stack>
+        </AnimatePresence>
         }
       </Flex>
     </>
