@@ -1,7 +1,10 @@
-import { SearchIcon } from "@chakra-ui/icons";
-import { Box, Flex, IconButton, Link, Stack } from "@chakra-ui/react";
+import { CloseIcon,SearchIcon } from "@chakra-ui/icons";
+import { Box, Button, Flex, Link,Slide, Stack, useDisclosure } from "@chakra-ui/react";
+import { useState } from "react";
 
 const Navbar = () => {
+  const { isOpen, onToggle } = useDisclosure()
+  const [nav, setNav] = useState(false)
   return ( 
     <>
       <Flex h='70px' w='100%' position='fixed' justifyContent='center' alignItems='center' bg='brand.bg' px={['', '', '40px', '60px', '100px']} zIndex='30' borderBottom='1px solid #718096' display={['none', 'flex', 'flex']}>
@@ -47,12 +50,38 @@ const Navbar = () => {
         <Box fontSize={['24px']} letterSpacing='-2px' color='gray.700'>
             DRAQBUREAU
         </Box>
-        <Box>
-          <Stack transform='rotate(-180deg)'>
+        <Button _focus={{ outline: '0' }}
+          onClick={() => setNav(!nav)}>
+          <Stack transform='rotate(-180deg)' >
             <Box w='26px' h='2px' bg='black'/>
             <Box w='32px' h='2px' bg='black'/>
           </Stack>
-        </Box>
+        </Button>
+        {
+          nav &&
+          <Stack h='60vh' textAlign='center' position='absolute' top='0' gap='16px' bg='brand.bg' color='gray.700' w='100vw' left='0' fontSize='20px'>
+              <Box mx='auto' as='button' onClick={() => setNav(!nav)} p='30px' color='red.300' fontSize='24px' textTransform='uppercase'>
+                {/* Close  */}
+                <CloseIcon/>
+              </Box>
+              
+              <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
+                <Link href='#'>
+                  Categories
+                </Link>
+              </Box>
+              <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
+                <Link href='#'>
+                  News
+                </Link>
+              </Box>
+              <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
+                <Link href='#'>
+                  About
+                </Link>
+              </Box>
+          </Stack>
+        }
       </Flex>
     </>
   );
