@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import Navbar from '../components/Navbar.js'
+import Navbar from '../components/Navbar'
 
 const Home: NextPage = () => {
   return (
