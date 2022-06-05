@@ -60,7 +60,7 @@ const Navbar = () => {
         {
           nav &&
           <AnimatePresence>
-            <Stack as={motion.div} initial={{ opacity: 0, y: '-70vh' }} animate={{ opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } }} exit={{ y: '70vh'}} h='60vh' textAlign='center' position='absolute' top='0' gap='16px' bg='brand.bg' color='gray.700' w='100vw' left='0' fontSize='20px'>
+            <Stack as={motion.div} initial={{ opacity: 0, y: '-70vh' }} animate={{ opacity: 1, y: 0, transition: { duration: .75, ease: "easeOut" } }} exit={{ y: '70vh'}} h='60vh' textAlign='center' position='absolute' top='0' gap='16px' bg='brand.bg' color='gray.700' w='100vw' left='0' fontSize='20px'>
               <Box mx='auto' as='button' onClick={() => setNav(!nav)} p='30px' color='red.300' fontSize='24px' textTransform='uppercase'>
                 {/* Close  */}
                 <CloseIcon/>

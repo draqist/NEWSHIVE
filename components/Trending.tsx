@@ -4,7 +4,8 @@ import { Box, Flex, Heading, Tag, Text } from "@chakra-ui/react"
 export const Trending = () => {
   return (
     <>
-      <Flex justifyContent='space-between' alignItems={['flex-start','','center']} px={['25px','','40px','60px','100px']} py='40px' flexGrow='1' direction={['column','column', 'row']} w='100%'>
+      <Heading mt='20px' fontFamily='Oswald' fontWeight='400' px={['25px','','40px','60px','100px']}> Trending News </Heading>
+      <Flex justifyContent='space-between' alignItems={['flex-start','','center']} px={['25px','','40px','60px','100px']} pb='40px' flexGrow='1' direction={['column','column', 'row']} w='100%'>
         <Box flexBasis={['100%','','23%']} mt={['20px', '', '0']} >
           <Tag variant='solid' colorScheme='blue' borderRadius='0'>
             Health
