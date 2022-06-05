@@ -16,4 +16,5 @@ export const theme = extendTheme({
     heading: `'Clash Display', 'Aktura', 'Poppins','Cabinet Grotesk' ,sans-serif`,
     body: `'Oswald', sans-serif`,
   },
+  
 })
