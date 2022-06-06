@@ -11,9 +11,9 @@ export const Sections = (props: any) => {
         </Box>
         <Stack direction='row' gap='2'>
           <Box w={['','','200px','240px','240px']} h='240px'>
-            <Heading fontSize='18px' mb='24px'> Some random news title </Heading>
+            <Heading fontSize={['14px','','18px']} mb='24px'> Some random news title </Heading>
             <Box h='100px' textOverflow=''>
-              <Text> Some random news more info </Text>
+              <Text fontSize={['12px','','']}> Some random news more info </Text>
             </Box>
             <Text textTransform='uppercase' fontWeight='300'> Read article <ExternalLinkIcon/> </Text>
           </Box>
