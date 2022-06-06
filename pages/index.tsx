@@ -8,7 +8,7 @@ import { Sections } from '../components/Sections'
 import { Trending } from '../components/Trending'
 
 const Home: NextPage = () => {
-  const sections:Array<object> = [
+  const sections = [
     {
       title: 'Technology'
     },

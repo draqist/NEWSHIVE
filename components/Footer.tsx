@@ -1,3 +1,4 @@
+{/* eslint-disable  react/no-unescaped-entities */ }
 import { EmailIcon, ExternalLinkIcon } from '@chakra-ui/icons'
 import { Box, Flex, Heading, Text } from '@chakra-ui/react'
 import React from 'react'

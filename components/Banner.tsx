@@ -1,3 +1,4 @@
+{/* eslint-disable  react/no-unescaped-entities */ }
 import { Box, Heading, Tag, Text } from '@chakra-ui/react'
 
 export const Banner = () => {
