@@ -20,7 +20,7 @@ export const Footer = () => {
             abdullahabdulfatah526@gmail.com
           </Text>
         </Box>
-        <Flex flexBasis={['none','','65%']} w='100%' justifyContent='space-between' alignItems='flex-start'>
+        <Flex flexBasis={['none','','60%','65%','65%']} w='100%' justifyContent='space-between' alignItems='flex-start'>
           <Box fontWeight='300'>
             <Heading fontFamily='Oswald' fontSize={['','','16px','20px','20px']} fontWeight='400'>Categories</Heading>
             <Text mt='14px'>Technology</Text>

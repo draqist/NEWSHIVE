@@ -4,7 +4,7 @@ import { Box, Flex, Heading, Stack, Text } from "@chakra-ui/react"
 export const Sections = (props: any) => {
   return (
     <>
-      <Flex justifyContent='space-between' alignItems='flex-start' mb='50px' borderTop='2px solid black' py='25px' w='100%'>
+      <Flex justifyContent='space-between' alignItems='flex-start' mb={['0px','','50px']} borderTop='2px solid black' py='25px' w='100%'>
         <Box>
           <Heading fontSize={['','','24px','36px','48px']}> {props.section } </Heading>
           <Text fontSize={['10px','','12px','14px','16px']} textTransform='uppercase'> See All <ExternalLinkIcon/> </Text>

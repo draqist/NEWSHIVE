@@ -1,15 +1,18 @@
 import { CloseIcon,SearchIcon } from "@chakra-ui/icons";
-import { Box, Button, Flex, Link, Stack, useDisclosure } from "@chakra-ui/react";
+import { Box, Button, Flex, Input, Link, Stack, useDisclosure } from "@chakra-ui/react";
 import { useState } from "react";
 import {AnimatePresence,motion} from 'framer-motion'
 
 const Navbar = () => {
   const [nav, setNav] = useState(false)
+  const [search, setSearch] = useState(false)
+  let display = 'box'
+  search ? display = 'none' : 'box'
   return ( 
     <>
       <Flex h='70px' w='100%' position='fixed' justifyContent='center' alignItems='center' bg='brand.bg' px={['', '', '40px', '60px', '100px']} zIndex='30' borderBottom='1px solid #718096' display={['none', 'flex', 'flex']}>
         {/* w='100%' position='fixed' considering this for later, might have to make the navbar a fixed position nav */}
-        <Flex justifyContent='space-between' fontWeight='400' color='gray.600' fontSize={['','','14px','18px','18px']} alignItems='center'  w='100%'>
+        <Flex justifyContent='space-between' fontWeight='400' color='gray.600' fontSize={['','','11px','16px','18px']} alignItems='center'  w='100%'>
           <Box>
             <Link textTransform='uppercase' href='#something'>
               Technology
@@ -25,7 +28,7 @@ const Navbar = () => {
               Health
             </Link>
           </Box>
-          <Box fontSize={['','','28px','30px','36px']} letterSpacing='-3px' color='gray.700'>
+          <Box fontSize={['','','22px','28px','36px']} letterSpacing='-3px' color='gray.700'>
             DRAQBUREAU
           </Box>
           <Box>
@@ -46,12 +49,19 @@ const Navbar = () => {
         </Flex>
       </Flex>
       <Flex h='70px' w='100%' position='fixed' justifyContent='space-between' alignItems='center' bg='brand.bg' px={['20px']} zIndex='30' borderBottom='1px solid #718096' display={['flex', 'none', 'none']}>
-        <SearchIcon fontSize='20px' />
-        <Box fontSize={['24px']} letterSpacing='-2px' color='gray.700'>
+        <SearchIcon fontSize='20px' onClick={() => setSearch(true)} />
+        {
+          search && 
+          <Flex justifyContent='space-between' alignItems='center' as={motion.div} initial={{ opacity: 0, y:"-5vh"}} animate={{ opacity: 1, y: 0, transition:{ duration: .25, ease: "easeInOut"}}} flexBasis='87%'>
+              <Input w='95%' variant='unstyled' borderBottom='1px solid black' px='12px' pb='6px' borderRadius='0' h='50px' placeholder='What do you want to know?' />
+              <CloseIcon onClick={() => setSearch(false)} ml='12px'/>
+          </Flex>
+        }
+        <Box display={display} fontSize={['24px']} letterSpacing='-2px' color='gray.700'>
             DRAQBUREAU
         </Box>
-        <Button _focus={{ outline: '0' }}
-          onClick={() => setNav(!nav)}>
+        <Button display={display} _focus={{ outline: '0' }}
+          onClick={() => setNav(!nav)} variant='unstyled'>
           <Stack transform='rotate(-180deg)' >
             <Box w='26px' h='2px' bg='black'/>
             <Box w='32px' h='2px' bg='black'/>
@@ -60,7 +70,7 @@ const Navbar = () => {
         {
           nav &&
           <AnimatePresence>
-            <Stack as={motion.div} initial={{ opacity: 0, y: '-70vh' }} animate={{ opacity: 1, y: 0, transition: { duration: .75, ease: "easeOut" } }} exit={{ y: '70vh'}} h='60vh' textAlign='center' position='absolute' top='0' gap='16px' bg='brand.bg' color='gray.700' w='100vw' left='0' fontSize='20px'>
+            <Stack as={motion.div} initial={{ opacity: 0, y: '-70vh' }} animate={{ opacity: 1, y: 0, transition: { duration: .5, ease: "easeOut" } }} exit={{ y: '70vh'}} h='60vh' textAlign='center' position='absolute' top='0' gap='16px' bg='brand.bg' color='gray.700' w='100vw' left='0' fontSize='20px'>
               <Box mx='auto' as='button' onClick={() => setNav(!nav)} p='30px' color='red.300' fontSize='24px' textTransform='uppercase'>
                 {/* Close  */}
                 <CloseIcon/>
