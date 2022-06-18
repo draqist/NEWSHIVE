@@ -8,11 +8,11 @@ import NextLink from 'next/link'
 export const Sections = (props: any) => {
   const [res, setRes] = useState<CustomType>()
   useEffect(() => {
-    Axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=${props.section.toLowerCase()}&apiKey=569c56ad91d341e3ad9ef7972d369313`)
+    Axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.customKey}&language=en&category=${props.section.toLowerCase()}`)
       .then(res => {
-        setRes(res.data.articles[0])
+        setRes(res.data.results[1])
       })
-  } , [])
+  } , [props.section])
   return (
     <>
       <Flex justifyContent='space-between' direction={['column','row']} alignItems='flex-start' mb={['0px','','50px']} borderTop='2px solid black' py='25px' w='100%'>
@@ -23,14 +23,14 @@ export const Sections = (props: any) => {
         <Stack direction={['column','row']} gap='2'>
           <Box w={['','','200px','240px','240px']} h='240px'>
             <Heading fontSize={['14px','','18px']} mb='24px'> {res?.title} </Heading>
-            <Box h='100px' textOverflow=''>
+            <Box h='' mb={['','','10px']} textOverflow='ellipsis'>
               <Text fontSize={['12px','','']}> {res?.description} </Text>
             </Box>
             <NextLink href='' >
-              <Link href={res?.url} isExternal outline='0' _focus={{outline: 0}} textTransform='uppercase' fontWeight='300'> Read article <ExternalLinkIcon/> </Link>
+              <Link href={res?.link} isExternal outline='0' _focus={{outline: 0}} textTransform='uppercase' fontWeight='300'> Read article <ExternalLinkIcon/> </Link>
             </NextLink>
           </Box>
-          <Box w={['', '', '200px', '240px', '240px']} bgPosition='center' bgSize='cover' bgImage={`url(${res?.urlToImage})`} h='240px' />
+          <Box w={['', '', '200px', '240px', '240px']} bgPosition='center' bgSize='cover' bgImage={`url(${res?.image_url})`} h='240px' />
         </Stack>
       </Flex>
     </>

@@ -52,7 +52,7 @@ const Navbar = () => {
         <SearchIcon fontSize='20px' onClick={() => setSearch(true)} />
         {
           search && 
-          <Flex justifyContent='space-between' alignItems='center' as={motion.div} initial={{ opacity: 0, y:"-5vh"}} animate={{ opacity: 1, y: 0, transition:{ duration: .25, ease: "easeInOut"}}} flexBasis='87%'>
+          <Flex justifyContent='space-between' alignItems='center' as={motion.div } initial={{ opacity: 0, y:"-5vh"}} animate={{ opacity: 1, y: 0, transition:{ duration: .25, ease: "easeInOut"}}} flexBasis='87%'>
               <Input w='95%' variant='unstyled' borderBottom='1px solid black' px='12px' pb='6px' borderRadius='0' h='50px' placeholder='What do you want to know?' />
               <CloseIcon onClick={() => setSearch(false)} ml='12px'/>
           </Flex>

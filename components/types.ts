@@ -1,14 +1,20 @@
 interface Trending {
+  source_id: string,
   source: {
-  id: string,
   name: string
   },
-  author: string,
+  keywords:[],
+  creator: string,
   title: string,
+  full_description: string,
   description: string,
-  url: string,
-  urlToImage: string,
-  publishedAt: string,
-  content: string
+  link: string,
+  image_url: string,
+  video_url: string,
+  pubDate: string | '2022-06-18 20:48:31',
+  content: string,
+  country: [],
+  category: [string],
+  language: string
 }
 export type CustomType = Trending
