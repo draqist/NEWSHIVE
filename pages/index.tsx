@@ -1,4 +1,5 @@
 import { Box } from '@chakra-ui/react'
+import  Axios  from 'axios'
 import type { NextPage } from 'next'
 import { Banner } from '../components/Banner'
 import { Footer } from '../components/Footer'
@@ -12,9 +13,9 @@ const Home: NextPage = () => {
     {
       title: 'Technology'
     },
-    {
-      title: 'Politics & Finance'
-    },
+    // {
+    //   title: 'Politics & Finance'
+    // },
     {
       title: 'Health'
     },
@@ -22,10 +23,14 @@ const Home: NextPage = () => {
       title: 'Entertainment'
     },
     {
+      title: 'Sports'
+    }, 
+    {
       title: 'Business'
     }, 
   ]
   return (
+  
     <>
       <Box bg='brand.bg'>
         <Navbar />
@@ -37,7 +42,8 @@ const Home: NextPage = () => {
           }
         </Box>
         <Newsletter />
-        <Footer/>
+        <Footer />
+        {/*  */}
       </Box>
     </>
   )

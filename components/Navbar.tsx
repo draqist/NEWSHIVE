@@ -14,17 +14,17 @@ const Navbar = () => {
         {/* w='100%' position='fixed' considering this for later, might have to make the navbar a fixed position nav */}
         <Flex justifyContent='space-between' fontWeight='400' color='gray.600' fontSize={['','','11px','16px','18px']} alignItems='center'  w='100%'>
           <Box>
-            <Link textTransform='uppercase' href='#something'>
+            <Link _focus={{outline: 0, }} textTransform='uppercase' href='#something'>
               Technology
             </Link>
           </Box>
           <Box>
-            <Link textTransform='uppercase' href='#something'>
+            <Link _focus={{outline: 0, }} textTransform='uppercase' href='#something'>
               Sports
             </Link>
           </Box>
           <Box>
-            <Link textTransform='uppercase' href='#something'>
+            <Link _focus={{outline: 0, }} textTransform='uppercase' href='#something'>
               Health
             </Link>
           </Box>
@@ -32,17 +32,17 @@ const Navbar = () => {
             DRAQBUREAU
           </Box>
           <Box>
-            <Link textTransform='uppercase' href='#something'>
+            <Link _focus={{outline: 0, }} textTransform='uppercase' href='#something'>
               Entertainment
             </Link>
           </Box>
           <Box>
-            <Link textTransform='uppercase' href='#something'>
+            <Link _focus={{outline: 0, }} textTransform='uppercase' href='#something'>
               Business
             </Link>
           </Box>
           <Box>
-            <Link textTransform='uppercase' href='#something'>
+            <Link _focus={{outline: 0, }} textTransform='uppercase' href='#something'>
             Politics & Finance
             </Link>
           </Box>
@@ -69,25 +69,25 @@ const Navbar = () => {
         </Button>
         {
           nav &&
-          <AnimatePresence>
-            <Stack as={motion.div} initial={{ opacity: 0, y: '-70vh' }} animate={{ opacity: 1, y: 0, transition: { duration: .5, ease: "easeOut" } }} exit={{ y: '70vh'}} h='60vh' textAlign='center' position='absolute' top='0' gap='16px' bg='brand.bg' color='gray.700' w='100vw' left='0' fontSize='20px'>
+          <AnimatePresence exitBeforeEnter={true}>
+            <Stack as={motion.div} initial={{ opacity: 0, y: '-70vh' }} animate={{ opacity: 1, y: 0, transition: { duration: .5, ease: "easeOut" } }} exit={{ y: '70vh', opacity: 0, transition:{duration: .65}}} h='60vh' textAlign='center' position='absolute' top='0' gap='16px' bg='brand.bg' color='gray.700' w='100vw' left='0' fontSize='20px'>
               <Box mx='auto' as='button' onClick={() => setNav(!nav)} p='30px' color='red.300' fontSize='24px' textTransform='uppercase'>
                 {/* Close  */}
                 <CloseIcon/>
               </Box>
               
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
-                <Link href='#'>
+                <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
                   Categories
                 </Link>
               </Box>
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
-                <Link href='#'>
+                <Link _focus={{outline: 0}} href='#news' onClick={() => setNav(!nav)}>
                   News
                 </Link>
               </Box>
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
-                <Link href='#'>
+                <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
                   About
                 </Link>
               </Box>

@@ -1,7 +1,7 @@
 {/* eslint-disable  react/no-unescaped-entities */ }
 import { EmailIcon, ExternalLinkIcon } from '@chakra-ui/icons'
 import { Box, Flex, Heading, Text } from '@chakra-ui/react'
-import React from 'react'
+import Axios from 'axios'
 
 export const Footer = () => {
   return (
@@ -43,7 +43,7 @@ export const Footer = () => {
           </Box>
         </Flex>
       </Flex>
-        <Text px={['25px', '', '40px', '60px', '100px']} color='gray.600'> 2022 DRAQBUREAU - All Rights Reserved</Text>
+        <Text px={['25px', '', '40px', '60px', '100px']} color='gray.600' pb='20px'> 2022 DRAQBUREAU - All Rights Reserved</Text>
     </>
   )
 }

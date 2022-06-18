@@ -5,7 +5,7 @@ import { MdOutlineEmail } from 'react-icons/md'
 
 export const Newsletter = () => {
   return (
-    <Flex justifyContent='center' alignItems='center' my='40px' bg='black' h={['','','260px']} px={['15px', '', '']}>
+    <Flex justifyContent='center' alignItems='center' my='40px' bg='black' h={['','','260px']} px={['15px', '', '']} id='news'>
       <Box color='brand.bg' textAlign='center'>
         <Heading my='20px' > Subscribe to <Text as='span' fontFamily='Oswald' textTransform='uppercase'> DraqBureau </Text> </Heading>
         <Text fontSize='20px'> Engaging copy for member subscription with the CTA to enter email and subscribe </Text>

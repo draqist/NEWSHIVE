@@ -1,19 +1,33 @@
 {/* eslint-disable  react/no-unescaped-entities */ }
 import { Box, Heading, Tag, Text } from '@chakra-ui/react'
+import Axios  from 'axios'
+import moment from 'moment'
+import { useEffect, useState } from 'react'
+import { CustomType } from './types'
 
 export const Banner = () => {
+  const [res, setRes] = useState<CustomType>()
+  useEffect(() => {
+    Axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=5e099fe95f5c4548b585877d8e4517ee')
+      .then(res => {
+        setRes(res.data.articles[4])
+      })
+  }, [])
+  moment.defaultFormat = "DD.MM.YYYY HH:mm";
   return (
-    <Box w={['','','100%']}  h={['600px','','450px']} bgImage="url('/bg.svg')" color='white' px={['25px', '25px', '40px', '60px', '100px']} pos='relative' bgPosition='right' py='40px'>
-      <Box pos='absolute' textAlign='left' bottom='40px' w={['','','600px']} right={['25px', '25px', '40px', '60px', '100px']} left={['25px', '25px', '40px', '60px', '100px']}>
-        <Text>
-          <Tag variant='solid' colorScheme='red' borderRadius='0' mr='10px'>
-              Health
+    <>
+      <Box w={['', '', '100%']} h={['600px', '', '450px']} bg={`url(${res?.urlToImage})`}  zIndex='1'  color='white' px={['25px', '25px', '40px', '60px', '100px']} pos='relative' bgPosition='center' bgSize='cover'  bgRepeat='no-repeat' py='40px'>
+        <Box pos='absolute' textAlign='left' bottom='40px' w={['','','600px']} right={['25px', '25px', '40px', '60px', '100px']} left={['25px', '25px', '40px', '60px', '100px']}>
+          <Text>
+            <Tag variant='solid' colorScheme='red' borderRadius='0' mr='16px'>
+                General
             </Tag>
-          This is the tag that'll contain the timeline of the news
-        </Text>
-        <Heading fontSize={['18px', '30px', '30px']} my='20px'> This is some random text to sit in the place of the heading content </Heading>
-        <Text fontSize={['12px','','']}> This is the subtitle text that is to sit at the bottom of the header text</Text>
+            {moment(res?.publishedAt).toDate().toString()}
+          </Text>
+          <Heading fontSize={['18px', '30px', '30px']} my='20px'> {res?.title} </Heading>
+          <Text fontSize={['16px', '', '']} fontFamily='Poppins' fontWeight='600'>{res?.description}</Text>
+        </Box>
       </Box>
-    </Box>
+    </>
   )
 }
