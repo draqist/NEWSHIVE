@@ -1,7 +1,8 @@
 import { CloseIcon,SearchIcon } from "@chakra-ui/icons";
 import { Box, Button, Flex, Input, Link, Stack, useDisclosure } from "@chakra-ui/react";
 import { useState } from "react";
-import {AnimatePresence,motion} from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
+import NextLink from 'next/link'
 
 const Navbar = () => {
   const [nav, setNav] = useState(false)
@@ -14,37 +15,51 @@ const Navbar = () => {
         {/* w='100%' position='fixed' considering this for later, might have to make the navbar a fixed position nav */}
         <Flex justifyContent='space-between' fontWeight='400' color='gray.600' fontSize={['','','11px','16px','18px']} alignItems='center'  w='100%'>
           <Box>
-            <Link _focus={{outline: 0, }} textTransform='uppercase' href='/technology'>
-              Technology
-            </Link>
+            <NextLink href='/'>
+              <Link _focus={{outline: 0, }} textTransform='uppercase' href='/technology'>
+                Technology
+              </Link>
+            </NextLink>
           </Box>
           <Box>
-            <Link _focus={{outline: 0, }} textTransform='uppercase' href='/sports'>
-              Sports
-            </Link>
+            <NextLink href='/'>
+              <Link _focus={{outline: 0, }} textTransform='uppercase' href='/sports'>
+                Sports
+              </Link>
+            </NextLink>
           </Box>
           <Box>
-            <Link _focus={{outline: 0, }} textTransform='uppercase' href='/health'>
-              Health
-            </Link>
+            <NextLink href='/'>
+              <Link _focus={{outline: 0, }} textTransform='uppercase' href='/health'>
+                Health
+              </Link>
+            </NextLink>
           </Box>
-          <Link href='/' fontSize={['','','22px','28px','36px']} letterSpacing='-3px' color='gray.700'>
-            DRAQBUREAU
-          </Link>
-          <Box>
-            <Link _focus={{outline: 0, }} textTransform='uppercase' href='/entertainment'>
-              Entertainment
+          <NextLink href='/'>
+            <Link href='/' fontSize={['','','22px','28px','36px']} letterSpacing='-3px' color='gray.700'>
+              DRAQBUREAU
             </Link>
+          </NextLink>
+          <Box>
+            <NextLink href='/'>
+              <Link _focus={{outline: 0, }} textTransform='uppercase' href='/entertainment'>
+                Entertainment
+              </Link>
+            </NextLink>
           </Box>
           <Box>
-            <Link _focus={{outline: 0, }} textTransform='uppercase' href='/business'>
-              Business
-            </Link>
+            <NextLink href='/'>
+              <Link _focus={{outline: 0, }} textTransform='uppercase' href='/business'>
+                Business
+              </Link>
+            </NextLink>
           </Box>
           <Box>
-            <Link _focus={{outline: 0, }} textTransform='uppercase' href='/politics'>
-            Politics & Finance
-            </Link>
+            <NextLink href='/'>
+              <Link _focus={{outline: 0, }} textTransform='uppercase' href='/politics'>
+              Politics & Finance
+              </Link>
+            </NextLink>
           </Box>
         </Flex>
       </Flex>
@@ -77,39 +92,53 @@ const Navbar = () => {
               </Box>
               
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
-                <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
-                  Technology
-                </Link>
+                <NextLink href='/'>
+                  <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
+                    Technology
+                  </Link>
+                </NextLink>
               </Box>
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
-                <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
-                  Sports
-                </Link>
+                <NextLink href='/'>
+                  <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
+                    Sports
+                  </Link>
+                </NextLink>
               </Box>
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
-                <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
-                  Health
-                </Link>
+                <NextLink href='/'>
+                  <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
+                    Health
+                  </Link>
+                </NextLink>
               </Box>
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
-                <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
-                  Entertainment
-                </Link>
+                <NextLink href='/'>
+                  <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
+                    Entertainment
+                  </Link>
+                </NextLink>
               </Box>
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
-                <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
-                  Categories
-                </Link>
+                <NextLink href='/'>
+                  <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
+                    Categories
+                  </Link>
+                </NextLink>
               </Box>
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
-                <Link _focus={{outline: 0}} href='#news' onClick={() => setNav(!nav)}>
-                  Business
-                </Link>
+                <NextLink href='/'>
+                  <Link _focus={{outline: 0}} href='#news' onClick={() => setNav(!nav)}>
+                    Business
+                  </Link>
+                </NextLink>
               </Box>
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
-                <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
-                  Politics
-                </Link>
+                <NextLink href='/'>
+                  <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
+                    Politics
+                  </Link>
+                </NextLink>
               </Box>
             </Stack>
         </AnimatePresence>
