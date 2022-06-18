@@ -12,51 +12,51 @@ const Navbar = () => {
   return ( 
     <>
       <Flex h='70px' w='100%' position='fixed' justifyContent='center' alignItems='center' bg='brand.bg' px={['', '', '40px', '60px', '100px']} zIndex='30' borderBottom='1px solid #718096' display={['none', 'flex', 'flex']}>
-        {/* w='100%' position='fixed' considering this for later, might have to make the navbar a fixed position nav */}
+        
         <Flex justifyContent='space-between' fontWeight='400' color='gray.600' fontSize={['','','11px','16px','18px']} alignItems='center'  w='100%'>
           <Box>
-            <NextLink href='/'>
-              <Link _focus={{outline: 0, }} textTransform='uppercase' href='/technology'>
+            <NextLink href='/technology' passHref>
+              <Link _focus={{outline: 0, }} textTransform='uppercase' >
                 Technology
               </Link>
             </NextLink>
           </Box>
           <Box>
-            <NextLink href='/'>
-              <Link _focus={{outline: 0, }} textTransform='uppercase' href='/sports'>
+            <NextLink href='/sports' passHref>
+              <Link _focus={{outline: 0, }} textTransform='uppercase' >
                 Sports
               </Link>
             </NextLink>
           </Box>
           <Box>
-            <NextLink href='/'>
-              <Link _focus={{outline: 0, }} textTransform='uppercase' href='/health'>
+            <NextLink href='/health' passHref>
+              <Link _focus={{outline: 0, }} textTransform='uppercase'>
                 Health
               </Link>
             </NextLink>
           </Box>
-          <NextLink href='/'>
-            <Link href='/' fontSize={['','','22px','28px','36px']} letterSpacing='-3px' color='gray.700'>
+          <NextLink href='/' passHref>
+            <Link _focus={{outline: 0}} fontSize={['','','22px','28px','36px']} letterSpacing='-3px' color='gray.700'>
               DRAQBUREAU
             </Link>
           </NextLink>
           <Box>
-            <NextLink href='/'>
-              <Link _focus={{outline: 0, }} textTransform='uppercase' href='/entertainment'>
+            <NextLink href='/entertainment' passHref>
+              <Link _focus={{outline: 0, }} textTransform='uppercase'>
                 Entertainment
               </Link>
             </NextLink>
           </Box>
           <Box>
-            <NextLink href='/'>
-              <Link _focus={{outline: 0, }} textTransform='uppercase' href='/business'>
+            <NextLink href='/business' passHref>
+              <Link _focus={{outline: 0, }} textTransform='uppercase'>
                 Business
               </Link>
             </NextLink>
           </Box>
           <Box>
-            <NextLink href='/'>
-              <Link _focus={{outline: 0, }} textTransform='uppercase' href='/politics'>
+            <NextLink href='/politics' passHref>
+              <Link _focus={{outline: 0, }} textTransform='uppercase'>
               Politics & Finance
               </Link>
             </NextLink>
