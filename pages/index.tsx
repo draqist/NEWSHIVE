@@ -10,21 +10,21 @@ import { Trending } from '../components/Trending'
 
 const Home: NextPage = () => {
   const sections = [
-    {
-      title: 'Technology'
-    },
     // {
-    //   title: 'Politics & Finance'
-    // },
-    {
-      title: 'Health'
-    },
-    {
-      title: 'Entertainment'
-    },
-    {
-      title: 'Sports'
-    }, 
+      //   title: 'Politics & Finance'
+      // },
+      {
+        title: 'Health'
+      },
+      {
+        title: 'Entertainment'
+      },
+      {
+        title: 'Sports'
+      }, 
+      {
+        title: 'Technology'
+      },
     {
       title: 'Business'
     }, 

@@ -14,35 +14,35 @@ const Navbar = () => {
         {/* w='100%' position='fixed' considering this for later, might have to make the navbar a fixed position nav */}
         <Flex justifyContent='space-between' fontWeight='400' color='gray.600' fontSize={['','','11px','16px','18px']} alignItems='center'  w='100%'>
           <Box>
-            <Link _focus={{outline: 0, }} textTransform='uppercase' href='#something'>
+            <Link _focus={{outline: 0, }} textTransform='uppercase' href='/technology'>
               Technology
             </Link>
           </Box>
           <Box>
-            <Link _focus={{outline: 0, }} textTransform='uppercase' href='#something'>
+            <Link _focus={{outline: 0, }} textTransform='uppercase' href='/sports'>
               Sports
             </Link>
           </Box>
           <Box>
-            <Link _focus={{outline: 0, }} textTransform='uppercase' href='#something'>
+            <Link _focus={{outline: 0, }} textTransform='uppercase' href='/health'>
               Health
             </Link>
           </Box>
-          <Box fontSize={['','','22px','28px','36px']} letterSpacing='-3px' color='gray.700'>
+          <Link href='/' fontSize={['','','22px','28px','36px']} letterSpacing='-3px' color='gray.700'>
             DRAQBUREAU
-          </Box>
+          </Link>
           <Box>
-            <Link _focus={{outline: 0, }} textTransform='uppercase' href='#something'>
+            <Link _focus={{outline: 0, }} textTransform='uppercase' href='/entertainment'>
               Entertainment
             </Link>
           </Box>
           <Box>
-            <Link _focus={{outline: 0, }} textTransform='uppercase' href='#something'>
+            <Link _focus={{outline: 0, }} textTransform='uppercase' href='/business'>
               Business
             </Link>
           </Box>
           <Box>
-            <Link _focus={{outline: 0, }} textTransform='uppercase' href='#something'>
+            <Link _focus={{outline: 0, }} textTransform='uppercase' href='/politics'>
             Politics & Finance
             </Link>
           </Box>
@@ -70,7 +70,7 @@ const Navbar = () => {
         {
           nav &&
           <AnimatePresence exitBeforeEnter={true}>
-            <Stack as={motion.div} initial={{ opacity: 0, y: '-70vh' }} animate={{ opacity: 1, y: 0, transition: { duration: .5, ease: "easeOut" } }} exit={{ y: '70vh', opacity: 0, transition:{duration: .65}}} h='60vh' textAlign='center' position='absolute' top='0' gap='16px' bg='brand.bg' color='gray.700' w='100vw' left='0' fontSize='20px'>
+            <Stack as={motion.div} initial={{ opacity: 0, y: '-70vh' }} animate={{ opacity: 1, y: 0, transition: { duration: .5, ease: "easeOut" } }} exit={{ y: '100vh', opacity: 0, transition:{duration: .65}}} h='100vh' textAlign='center' position='absolute' top='0' gap='16px' bg='brand.bg' color='gray.700' w='100vw' left='0' fontSize='20px'>
               <Box mx='auto' as='button' onClick={() => setNav(!nav)} p='30px' color='red.300' fontSize='24px' textTransform='uppercase'>
                 {/* Close  */}
                 <CloseIcon/>
@@ -78,17 +78,37 @@ const Navbar = () => {
               
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
                 <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
+                  Technology
+                </Link>
+              </Box>
+              <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
+                <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
+                  Sports
+                </Link>
+              </Box>
+              <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
+                <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
+                  Health
+                </Link>
+              </Box>
+              <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
+                <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
+                  Entertainment
+                </Link>
+              </Box>
+              <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
+                <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
                   Categories
                 </Link>
               </Box>
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
                 <Link _focus={{outline: 0}} href='#news' onClick={() => setNav(!nav)}>
-                  News
+                  Business
                 </Link>
               </Box>
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
                 <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
-                  About
+                  Politics
                 </Link>
               </Box>
             </Stack>

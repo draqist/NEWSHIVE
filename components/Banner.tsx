@@ -8,7 +8,7 @@ import { CustomType } from './types'
 export const Banner = () => {
   const [res, setRes] = useState<CustomType>()
   useEffect(() => {
-    Axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=5e099fe95f5c4548b585877d8e4517ee')
+    Axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=569c56ad91d341e3ad9ef7972d369313')
       .then(res => {
         setRes(res.data.articles[4])
       })
