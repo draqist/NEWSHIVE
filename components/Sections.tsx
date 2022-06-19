@@ -10,7 +10,7 @@ export const Sections = (props: any) => {
   useEffect(() => {
     Axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.customKey}&language=en&category=${props.section.toLowerCase()}`)
       .then(res => {
-        setRes(res.data.results[1])
+        setRes(res.data.results[2])
       })
   } , [props.section])
   return (
@@ -25,14 +25,14 @@ export const Sections = (props: any) => {
         <Stack direction={['column','row']} gap='2'>
           <Box w={['','','200px','240px','240px']} h='240px'>
             <Heading fontSize={['14px','','18px']} mb='24px'> {res?.title} </Heading>
-            <Box h='' mb={['','','10px']} textOverflow='ellipsis'>
+            <Box h='120px' mb={['','','10px']} overflow={'hidden'}>
               <Text fontSize={['12px','','']}> {res?.description} </Text>
             </Box>
             <NextLink href='' >
               <Link href={res?.link} isExternal outline='0' _focus={{outline: 0}} textTransform='uppercase' fontWeight='300'> Read article <ExternalLinkIcon/> </Link>
             </NextLink>
           </Box>
-          <Box w={['', '', '200px', '240px', '240px']} bgPosition='center' bgSize='cover' bgImage={`url(${res?.image_url})`} h='240px' />
+          <Box w={['', '', '200px', '240px', '240px']} bgPosition='center' bgSize='cover' bgImage={`url(${res?.image_url != null ? res.image_url : "news.jpg"})`} h='240px' />
         </Stack>
       </Flex>
     </>

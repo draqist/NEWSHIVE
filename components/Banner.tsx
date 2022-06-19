@@ -16,7 +16,7 @@ export const Banner = () => {
   }, [])
   return (
     <>
-      <Box w={['', '', '100%']} h={['600px', '', '450px']} bg={`url(${res?.image_url})`}  zIndex='1'  color='white' px={['25px', '25px', '40px', '60px', '100px']} pos='relative' bgPosition='center' bgSize='cover'  bgRepeat='no-repeat' py='40px'>
+      <Box w={['', '', '100%']} h={['600px', '', '450px']} bg={`url(${res?.image_url})`}   zIndex='1'  color='white' px={['25px', '25px', '40px', '60px', '100px']} pos='relative' bgPosition='top center' bgSize='cover'  bgRepeat='no-repeat' py='40px'>
         <Box pos='absolute' textAlign='left' bottom='40px' w={['','','600px']} right={['25px', '25px', '40px', '60px', '100px']} left={['25px', '25px', '40px', '60px', '100px']}>
           <Text>
             <Tag variant='solid' textTransform='capitalize' colorScheme='red' borderRadius='0' mr='16px'>

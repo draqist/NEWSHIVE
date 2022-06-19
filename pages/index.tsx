@@ -34,7 +34,9 @@ const Home: NextPage = () => {
     <>
       <Box bg='brand.bg'>
         <Navbar />
-        <Banner />
+        <Box bgColor='rgba(0,0,0,.3)'>
+          <Banner />
+        </Box>
         <Trending />
         <Box px={['25px', '', '40px', '60px', '100px']} mt={['20px','','60px']}>
           {

@@ -1,7 +1,9 @@
-import { Box, Heading, Tag, Text } from '@chakra-ui/react'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { Box, Heading, Link, Tag, Text } from '@chakra-ui/react'
 import React from 'react'
+import NextLink from 'next/link'
 
-export const Trend = ({ title, subtitle, category }: { title: string, subtitle: string, category: [string] }) => {
+export const Trend = ({ title, subtitle, category, url }: { title: string, subtitle: string, category: [string], url:string }) => {
   return (
     <Box flexBasis={['100%', '', '23%']} mt={['20px', '', '0']}>
       <Tag variant='solid' colorScheme='blue' borderRadius='0'>
@@ -10,7 +12,12 @@ export const Trend = ({ title, subtitle, category }: { title: string, subtitle: 
       <Box h='68px' textOverflow='ellipsis' mb={['10px',]}>
         <Heading fontSize='14px' mb={['10px', '', '20px']} mt={['10px','16px']} fontWeight='600'> {title} </Heading>
       </Box>
-      <Text fontSize={['12px', '', '']} fontWeight='400' > {subtitle} </Text>
+      <Box h='70px' mb='10px' overflow='hidden' >
+        <Text fontSize={['12px', '', '']} fontWeight='400'> {subtitle} </Text>
+      </Box>
+      <NextLink href={`${url}`} passHref >
+        <Link isExternal mt='10px' outline='0' _focus={{outline: 0}} textTransform='uppercase' fontWeight='300'> Read article <ExternalLinkIcon/> </Link>
+      </NextLink>
     </Box>
   )
 }
