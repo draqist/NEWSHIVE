@@ -12,11 +12,11 @@ export const Trend = ({ title, subtitle, category, url }: { title: string, subti
       <Box h='68px' textOverflow='ellipsis' mb={['10px',]}>
         <Heading fontSize='14px' mb={['10px', '', '20px']} mt={['10px','16px']} fontWeight='600'> {title} </Heading>
       </Box>
-      <Box h='70px' mb='10px' overflow='hidden' >
+      <Box h='70px' mb='14px' overflow='hidden' >
         <Text fontSize={['12px', '', '']} fontWeight='400'> {subtitle} </Text>
       </Box>
       <NextLink href={`${url}`} passHref >
-        <Link isExternal mt='10px' outline='0' _focus={{outline: 0}} textTransform='uppercase' fontWeight='300'> Read article <ExternalLinkIcon/> </Link>
+        <Link isExternal mt='10px' outline='0' _focus={{outline: 0}} textTransform='uppercase' fontWeight='100' > Read article <ExternalLinkIcon/> </Link>
       </NextLink>
     </Box>
   )
