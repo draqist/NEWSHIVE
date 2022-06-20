@@ -38,7 +38,7 @@ const Home: NextPage = () => {
           <Banner />
         </Box>
         <Trending />
-        <Box px={['25px', '', '40px', '60px', '100px']} mt={['20px','','60px']}>
+        <Box px={['25px', '', '40px', '60px', '100px']} mt={['20px','','60px']} mb={['','','40px']}>
           {
             sections.map((sec, id) => <Sections key={id} section={ sec.title }/>)
           }

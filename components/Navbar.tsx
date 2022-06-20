@@ -11,7 +11,7 @@ const Navbar = () => {
   search ? display = 'none' : 'box'
   return ( 
     <>
-      <Flex h='70px' w='100%' position='fixed' justifyContent='center' alignItems='center' bg='brand.bg' px={['', '', '40px', '60px', '100px']} zIndex='30' borderBottom='1px solid #718096' display={['none', 'flex', 'flex']}>
+      <Flex h='70px' w='100%' position='fixed' justifyContent='center' alignItems='center' bg='brand.bg' px={['', '', '40px', '60px', '100px']} zIndex='30'  boxShadow='lg' display={['none', 'flex', 'flex']} >
         
         <Flex justifyContent='space-between' fontWeight='400' color='gray.600' fontSize={['','','11px','16px','18px']} alignItems='center'  w='100%'>
           <Box>

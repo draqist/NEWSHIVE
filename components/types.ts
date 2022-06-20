@@ -1,4 +1,4 @@
-interface Trending {
+export interface Trending {
   source_id: string,
   source: {
   name: string
@@ -17,4 +17,5 @@ interface Trending {
   category: [string],
   language: string
 }
-export type CustomType = Trending
+interface TrendingArray extends Array<Trending>{}
+export type { TrendingArray }

@@ -3,11 +3,11 @@ import { Box, Heading, Tag, Text } from '@chakra-ui/react'
 import Axios  from 'axios'
 import moment from 'moment'
 import { useEffect, useState } from 'react'
-import { CustomType } from './types'
+import { Trending } from './types'
 
 export const Banner = () => {
   
-  let [res, setRes] = useState<CustomType>()
+  let [res, setRes] = useState<Trending>()
   useEffect(() => {
     Axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.customKey}&language=en&category=world,top&domain=cnn`)
       .then(res => {
