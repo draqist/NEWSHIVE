@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { Banner } from '../components/Banner'
 import Navbar from '../components/Navbar'
 import { News } from '../components/News'
-import { Trending, TrendingArray } from '../components/types'
+import { Trending } from '../components/types'
 
 
 const Politics = () => {
@@ -25,10 +25,10 @@ const Politics = () => {
     <Box bg='brand.bg' h='100%'>
       <Navbar/>
       <Box>
-        <Banner/>
+        <Banner category={path.slice(1)} domain='portsmouth'/>
       </Box>
       <Box px={['25px', '', '40px', '60px', '100px']} mt={['20px', '', '30px']}>
-        <Heading mb='30px'> Politics News </Heading>
+        <Heading mb='30px'> Politics </Heading>
         {
           res?.map((data, id) => <News data={data} key={id}/>
           )

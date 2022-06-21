@@ -2,11 +2,11 @@ import { Flex, Heading, } from "@chakra-ui/react"
 import  Axios  from "axios"
 import { useEffect, useState } from "react"
 import { Trend } from "./Trend"
-import {CustomType} from './types'
+import {Trending} from './types'
 
 
-export const Trending = () => {
-  const [res, setRes] = useState<CustomType[]>()
+const Trending = () => {
+  const [res, setRes] = useState<Trending[]>()
   useEffect(() => {
       Axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.customKey}&language=en&category=politics,health,entertainment`)
         .then(res => {
@@ -26,3 +26,4 @@ export const Trending = () => {
     </>
   )
 }
+export default Trending

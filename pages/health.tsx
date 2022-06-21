@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { Banner } from '../components/Banner'
 import Navbar from '../components/Navbar'
 import { News } from '../components/News'
-import { Trending, TrendingArray } from '../components/types'
+import { Trending } from '../components/types'
 
 
 const Health = () => {
@@ -17,7 +17,7 @@ const Health = () => {
     Axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.customKey}&language=en&category=${path.slice(1)}`)
       .then(res => {
         setRes(res.data.results)
-        console.log(res.data.results)
+        console.log(res)
       })
   }, [path])
   
@@ -25,7 +25,7 @@ const Health = () => {
     <Box bg='brand.bg' h='100%'>
       <Navbar/>
       <Box>
-        <Banner/>
+        <Banner category={path.slice(1)} domain='bbc'/>
       </Box>
       <Box px={['25px', '', '40px', '60px', '100px']} mt={['20px', '', '30px']}>
         <Heading mb='30px'> Health News </Heading>
