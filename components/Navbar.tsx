@@ -16,7 +16,7 @@ const Navbar = () => {
   search ? display = 'none' : 'box'
 
   function SearchQuery() {
-      Axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.customKey}&language=en&category=${path.slice(1)}&q=${value}`)
+      Axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.customKey}&language=en&category=${path.slice(1)}`)
         .then(res => {
           return setData(res.data.results)
         })
