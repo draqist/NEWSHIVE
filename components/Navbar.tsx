@@ -3,10 +3,14 @@ import { Box, Button, Flex, Input, Link, Stack, useDisclosure } from "@chakra-ui
 import { useState } from "react";
 import { AnimatePresence, motion } from 'framer-motion'
 import NextLink from 'next/link'
+import { useRouter } from 'next/router'
 
 const Navbar = () => {
   const [nav, setNav] = useState(false)
   const [search, setSearch] = useState(false)
+  const [value, setValue] = useState('')
+  const { pathname } = useRouter()
+  let path = pathname
   let display = 'box'
   search ? display = 'none' : 'box'
   return ( 
@@ -72,7 +76,7 @@ const Navbar = () => {
         {
           search && 
           <Flex justifyContent='space-between' alignItems='center' as={motion.div } initial={{ opacity: 0, y:"-5vh"}} animate={{ opacity: 1, y: 0, transition:{ duration: .25, ease: "easeInOut"}}} flexBasis='87%'>
-              <Input w='95%' variant='unstyled' borderBottom='1px solid black' px='12px' pb='6px' borderRadius='0' h='50px' placeholder='What do you want to know?' />
+              <Input w='95%' variant='unstyled' borderBottom='1px solid black' px='12px' pb='6px' borderRadius='0' h='50px' placeholder={`Search the latest news on  ${path.slice(1)}?`} value ={value} onChange={(e) => setValue(e.target.value)} onEnter={() => setSearch(false)} />
               <CloseIcon onClick={() => setSearch(false)} ml='12px'/>
           </Flex>
         }

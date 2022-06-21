@@ -5,9 +5,12 @@ import theme from '../theme'
 import {createContext} from 'react'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const SearchResults = createContext([])
   return (
-    <ChakraProvider theme = {theme}>
-      <Component {...pageProps} />
+    <ChakraProvider theme={theme}>
+      <SearchResults.Provider value={[]}>
+        <Component {...pageProps} />
+      </SearchResults.Provider>
     </ChakraProvider>
   )
 }

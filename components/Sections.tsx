@@ -10,7 +10,8 @@ export const Sections = (props: any) => {
   useEffect(() => {
     Axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.customKey}&language=en&category=${props.section.toLowerCase()}`)
       .then(res => {
-        setRes(res.data.results[2])
+        setRes(res.data.results[1])
+        console.log(res.data.results[1])
       })
   } , [props.section])
   return (
@@ -23,7 +24,7 @@ export const Sections = (props: any) => {
           </NextLink>
         </Flex>
         <Stack direction={['column','row']} gap='2'>
-          <Box w={['','','200px','240px','240px']} h='240px'>
+          <Box w={['','','200px','240px','240px']} h='240px'>[]
             <Heading fontSize={['14px','','16px']} mb='14px'> {res?.title} </Heading>
             <Box h='130px' mb={['','','10px']} overflow={'hidden'}>
               <Text fontSize={['12px','','']}> {res?.description} </Text>
