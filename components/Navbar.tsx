@@ -92,49 +92,49 @@ const Navbar = () => {
               </Box>
               
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
-                <NextLink href='/'>
+                <NextLink href='/technology' passHref>
                   <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
                     Technology
                   </Link>
                 </NextLink>
               </Box>
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
-                <NextLink href='/'>
+                <NextLink href='/sports' passHref>
                   <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
                     Sports
                   </Link>
                 </NextLink>
               </Box>
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
-                <NextLink href='/'>
+                <NextLink href='/health' passHref>
                   <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
                     Health
                   </Link>
                 </NextLink>
               </Box>
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
-                <NextLink href='/'>
+                <NextLink href='/entertainment' passHref>
                   <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
                     Entertainment
                   </Link>
                 </NextLink>
               </Box>
-              <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
+              {/* <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
                 <NextLink href='/'>
                   <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
                     Categories
                   </Link>
                 </NextLink>
-              </Box>
+              </Box> */}
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
-                <NextLink href='/'>
+                <NextLink href='/business' passHref>
                   <Link _focus={{outline: 0}} href='#news' onClick={() => setNav(!nav)}>
                     Business
                   </Link>
                 </NextLink>
               </Box>
               <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
-                <NextLink href='/'>
+                <NextLink href='/politics' passHref>
                   <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
                     Politics
                   </Link>
