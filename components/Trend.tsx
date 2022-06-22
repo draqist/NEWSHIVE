@@ -8,16 +8,17 @@ export const Trend = ({ title, subtitle, category, url }: { title: string, subti
   
   const { pathname } = useRouter()
   let path = pathname.slice(1)
+
   let tag = 'blue';
-  if (category === ['health']) {
+  if (category[0] === 'health') {
     tag ='green'
-  } else if (category === ['politics']){
+  } else if (category[0] === 'politics'){
     tag ='red'
-  } else if (category === ['entertainment']) {
+  } else if (category[0] === 'entertainment') {
     tag ='purple'
-  } else if (category === ['sports']) {
+  } else if (category[0] === 'sports') {
     tag ='linkedin'
-  } else if (category === ['business']) {
+  } else if (category[0] === 'business') {
     tag = 'gray'
   } else {
     tag ='teal'
