@@ -8,7 +8,7 @@ import { Newsletter } from '../components/Newsletter'
 import { Sections } from '../components/Sections'
 import { Splash } from '../components/Splash'
 import Trending from '../components/Trending'
-import {sections, transition} from '../extra'
+import { sections, } from '../extra'
 
 const Home: NextPage = () => {
   return (
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
           <Banner category={'top'} domain='cnn' />
         </Box>
         <Trending />
-        <Box px={['25px', '', '40px', '60px', '100px']} mt={['20px','','60px']} mb={['','','40px']}>
+        <Box px={['25px', '', '40px', '60px', '100px']} mt={['20px','','60px']} mb={['','','40px']} data-scroll-container>
           {
             sections.map((sec, id) => <Sections key={id} section={ sec.title }/>)
           }
