@@ -17,7 +17,7 @@ const Home: NextPage = () => {
       <Box bg='brand.bg'>
         <Navbar />
         <Box bgColor='#363434ba'>
-          <Banner category={'top'} domain='cnn' />
+          <Banner category={'world'} domain='cnn' />
         </Box>
         <Trending />
         <Box px={['25px', '', '40px', '60px', '100px']} mt={['20px','','60px']} mb={['','','40px']} data-scroll-container>
