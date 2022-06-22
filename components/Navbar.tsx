@@ -1,7 +1,7 @@
 import { CloseIcon,SearchIcon } from "@chakra-ui/icons";
 import { Box, Button, Flex, Input, Link, Stack } from "@chakra-ui/react";
 import { useState } from "react";
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import  Axios  from "axios";
@@ -94,8 +94,10 @@ const Navbar = () => {
                 <CloseIcon onClick={() => setSearch(false)} ml='12px'/>
             </Flex>
           }
-          <Box display={display} fontSize={['24px']} letterSpacing='-2px' color='gray.700'>
+        <Box display={display} fontSize={['24px']} letterSpacing='-2px' color='gray.700'>
+          <Link href='/'>
               DRAQBUREAU
+          </Link>
           </Box>
           <Button display={display} _focus={{ outline: '0' }}
             onClick={() => setNav(!nav)} variant='unstyled'>
