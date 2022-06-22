@@ -1,5 +1,6 @@
 import { Box, Heading } from '@chakra-ui/react'
-import Axios  from 'axios'
+import Axios from 'axios'
+import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { Banner } from '../components/Banner'
@@ -8,7 +9,7 @@ import { News } from '../components/News'
 import { Trending } from '../components/types'
 
 
-const Health = () => {
+const Health:NextPage = () => {
   const [res, setRes] = useState<Trending[]>()
   const { pathname } = useRouter()
   let path = pathname

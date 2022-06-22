@@ -1,7 +1,9 @@
 {/* eslint-disable  react/no-unescaped-entities */ }
 import { EmailIcon, ExternalLinkIcon } from '@chakra-ui/icons'
-import { Box, Flex, Heading, Text } from '@chakra-ui/react'
-import Axios from 'axios'
+import { Box, Flex, Heading, Link as CLink, Text } from '@chakra-ui/react'
+import NextLink from 'next/link'
+import Link  from 'next/link'
+import { routes } from '../extra'
 
 export const Footer = () => {
   return (
@@ -22,13 +24,16 @@ export const Footer = () => {
         </Box>
         <Flex flexBasis={['none','','60%','65%','65%']} w='100%' justifyContent='space-between' alignItems='flex-start'>
           <Box fontWeight='300'>
-            <Heading fontFamily='Oswald' fontSize={['','','16px','20px','20px']} fontWeight='400'>Categories</Heading>
-            <Text mt='14px'>Technology</Text>
-            <Text mt='14px'>Sports</Text>
-            <Text mt='14px'>Health</Text>
-            <Text mt='14px'>Entertainment</Text>
-            <Text mt='14px'>Business</Text>
-            <Text mt='14px'> Politics & Finance</Text>
+            <Heading fontFamily='Oswald' fontSize={['', '', '16px', '20px', '20px']} fontWeight='400'>Categories</Heading>
+            {
+              routes.map((sec, id) => (
+                <NextLink key={id} href={`/${sec.title.toLowerCase()}`} passHref>
+                  <CLink>
+                    <Text mt='14px'>{ sec.title} </Text>
+                  </CLink>
+                </NextLink>
+              ))
+            }
           </Box>
           <Box fontWeight='300'>
             <Heading fontFamily='Oswald' fontSize={['','','16px','20px','20px']} fontWeight='400'>About</Heading>
@@ -37,9 +42,15 @@ export const Footer = () => {
           </Box>
           <Box fontWeight='300'>
             <Heading fontFamily='Oswald' fontSize={['','','16px','20px','20px']} fontWeight='400'>Follow us</Heading>
-            <Text mt='14px'>Twitter <ExternalLinkIcon ml='6px'/> </Text>
-            <Text mt='14px'>Instagrm <ExternalLinkIcon ml='6px'/> </Text>
-            <Text mt='14px'>Health</Text>
+            <Link href='https://twitter.com/Hackth8r'>
+              <Text my='14px'> Twitter <ExternalLinkIcon ml='6px' /> </Text>
+            </Link>
+            <Link href='https://twitter.com/Draqode'>
+              <Text mb='14px'> Github <ExternalLinkIcon ml='6px' /> </Text>
+            </Link>
+            <Link href='https://draq.hashnode.dev'>
+              <Text> Hashnode <ExternalLinkIcon ml='6px' /></Text>
+            </Link>
           </Box>
         </Flex>
       </Flex>

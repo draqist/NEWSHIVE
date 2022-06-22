@@ -1,36 +1,19 @@
-import { Box } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 import type { NextPage } from 'next'
 import { Banner } from '../components/Banner'
 import { Footer } from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { Newsletter } from '../components/Newsletter'
 import { Sections } from '../components/Sections'
-import Trending  from '../components/Trending'
+import { Splash } from '../components/Splash'
+import Trending from '../components/Trending'
+import {sections, transition} from '../extra'
 
 const Home: NextPage = () => {
-  const sections = [
-    {
-        title: 'Politics'
-      },
-      {
-        title: 'Health'
-      },
-      {
-        title: 'Entertainment'
-      },
-      {
-        title: 'Sports'
-      }, 
-      {
-        title: 'Technology'
-      },
-    {
-      title: 'Business'
-    }, 
-  ]
   return (
-  
     <>
+      <Splash/>
       <Box bg='brand.bg'>
         <Navbar />
         <Box bgColor='#363434ba'>
