@@ -43,13 +43,13 @@ export const Footer = () => {
           <Box fontWeight='300'>
             <Heading fontFamily='Oswald' fontSize={['','','16px','20px','20px']} fontWeight='400'>Follow us</Heading>
             <Link href='https://twitter.com/Hackth8r'>
-              <Text my='14px'> Twitter <ExternalLinkIcon ml='6px' /> </Text>
+              <Text my='14px' cursor='pointer'> Twitter <ExternalLinkIcon ml='6px' /> </Text>
             </Link>
-            <Link href='https://twitter.com/Draqode'>
-              <Text mb='14px'> Github <ExternalLinkIcon ml='6px' /> </Text>
+            <Link href='https://github.com/Draqode'>
+              <Text mb='14px' cursor='pointer'> Github <ExternalLinkIcon ml='6px' /> </Text>
             </Link>
-            <Link href='https://draq.hashnode.dev'>
-              <Text> Hashnode <ExternalLinkIcon ml='6px' /></Text>
+            <Link href='https://draq.hashnode.dev' >
+              <Text cursor='pointer'> Hashnode <ExternalLinkIcon ml='6px' /></Text>
             </Link>
           </Box>
         </Flex>
