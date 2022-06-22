@@ -82,7 +82,7 @@ const Navbar = () => {
         </Flex>
         <Flex h='70px' w='100%' position='fixed' justifyContent='space-between' alignItems='center' bg='brand.bg' px={['20px']} zIndex='30' boxShadow='xl' display={['flex', 'none', 'none']}>
           <Box display={display}>
-            <SearchIcon fontSize='20px' onClick={() => setSearch(true)} />
+            <SearchIcon fontSize='20px' color='black' onClick={() => setSearch(true)} />
           </Box>
           {
             search && 
@@ -115,42 +115,42 @@ const Navbar = () => {
                   <CloseIcon/>
                 </Box>
                 
-                <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
+                <Box _hover={{ color: 'gray.300' }} color='gray.600' borderBottom='2px solid' p='20px' textTransform='uppercase'>
                   <NextLink href='/technology' passHref>
                     <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
                       Technology
                     </Link>
                   </NextLink>
                 </Box>
-                <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
+                <Box _hover={{ color: 'gray.300' }} color='gray.600' borderBottom='2px solid' p='20px' textTransform='uppercase'>
                   <NextLink href='/sports' passHref>
                     <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
                       Sports
                     </Link>
                   </NextLink>
                 </Box>
-                <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
+                <Box _hover={{ color: 'gray.300' }} color='gray.600' borderBottom='2px solid' p='20px' textTransform='uppercase'>
                   <NextLink href='/health' passHref>
                     <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
                       Health
                     </Link>
                   </NextLink>
                 </Box>
-                <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
+                <Box _hover={{ color: 'gray.300' }} color='gray.600' borderBottom='2px solid' p='20px' textTransform='uppercase'>
                   <NextLink href='/entertainment' passHref>
                     <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
                       Entertainment
                     </Link>
                   </NextLink>
                 </Box>
-                <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
+                <Box _hover={{ color: 'gray.300' }} color='gray.600' borderBottom='2px solid' p='20px' textTransform='uppercase'>
                   <NextLink href='/business' passHref>
                     <Link _focus={{outline: 0}} href='#news' onClick={() => setNav(!nav)}>
                       Business
                     </Link>
                   </NextLink>
                 </Box>
-                <Box _hover={{ color: 'gray.300' }} borderBottom='2px solid' p='20px' textTransform='uppercase'>
+                <Box _hover={{ color: 'gray.300' }} color='gray.600' borderBottom='2px solid' p='20px' textTransform='uppercase'>
                   <NextLink href='/politics' passHref>
                     <Link _focus={{outline: 0}} href='#' onClick={() => setNav(!nav)}>
                       Politics

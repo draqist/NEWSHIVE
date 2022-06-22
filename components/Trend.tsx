@@ -5,7 +5,7 @@ import NextLink from 'next/link'
 
 export const Trend = ({ title, subtitle, category, url }: { title: string, subtitle: string, category: [string], url:string }) => {
   return (
-    <Box flexBasis={['100%', '', '23%']} mt={['20px', '', '0']}>
+    <Box color='black' flexBasis={['100%', '', '23%']} mt={['20px', '', '0']}>
       <Tag variant='solid' colorScheme='blue' borderRadius='0'>
         {category[0].toUpperCase()}
       </Tag>
@@ -16,7 +16,7 @@ export const Trend = ({ title, subtitle, category, url }: { title: string, subti
         <Text fontSize={['12px', '', '']} fontWeight='400'> {subtitle} </Text>
       </Box>
       <NextLink href={`${url}`} passHref >
-        <Link isExternal mt='10px' outline='0' _focus={{outline: 0}} textTransform='uppercase' fontWeight='100' > Read article <ExternalLinkIcon/> </Link>
+        <Link isExternal mt='10px' outline='0' _focus={{outline: 0}} textTransform='uppercase' color='twitter.600' fontWeight='100' > Read article <ExternalLinkIcon/> </Link>
       </NextLink>
     </Box>
   )

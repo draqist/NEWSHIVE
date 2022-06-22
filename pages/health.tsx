@@ -23,7 +23,7 @@ const Health:NextPage = () => {
   }, [path])
   
   return (
-    <Box bg='brand.bg' h='100%'>
+    <Box bg='brand.bg' h='100%' color='black'>
       <Navbar/>
       <Box>
         <Banner category={path.slice(1)} domain='bbc'/>
