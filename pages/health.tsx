@@ -12,10 +12,10 @@ import { Trending } from '../components/types'
 const Health:NextPage = () => {
   const [res, setRes] = useState<Trending[]>()
   const { pathname } = useRouter()
-  let path = pathname
+  let path=pathname.slice(1)
 
   useEffect(() => {
-    Axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.customKey}&language=en&category=${path.slice(1)}`)
+    Axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.customKey}&language=en&category=${path}`)
       .then(res => {
         setRes(res.data.results)
         console.log(res)
@@ -26,7 +26,7 @@ const Health:NextPage = () => {
     <Box bg='brand.bg' h='100%' color='black'>
       <Navbar/>
       <Box>
-        <Banner category={path.slice(1)} domain='bbc'/>
+        <Banner category={path} domain='bbc'/>
       </Box>
       <Box px={['25px', '', '40px', '60px', '100px']} mt={['20px', '', '30px']}>
         <Heading mb='30px'> Health News </Heading>

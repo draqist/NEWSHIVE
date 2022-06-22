@@ -11,12 +11,12 @@ const Navbar = () => {
   const [search, setSearch] = useState(false)
   const [data, setData] = useState([])
   const { pathname } = useRouter()
-  let path = pathname
+  let path=pathname.slice(1)
   let display = 'box'
   search ? display = 'none' : 'box'
 
   function SearchQuery() {
-      Axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.customKey}&language=en&category=${path.slice(1)}`)
+      Axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.customKey}&language=en&category=${path}`)
         .then(res => {
           return setData(res.data.results)
         })
@@ -87,7 +87,7 @@ const Navbar = () => {
           {
             search && 
             <Flex justifyContent='space-between' alignItems='center' as={motion.div } initial={{ opacity: 0, y:"-5vh"}} animate={{ opacity: 1, y: 0, transition:{ duration: .25, ease: "easeIn"}}} flexBasis='100%'>
-                <Input w='100%' variant='unstyled' borderBottom='1px solid black' px='12px' pb='6px' borderRadius='0' h='50px' placeholder={`Search the latest news on ${path.slice(1)}?`} />
+                <Input w='100%' variant='unstyled' borderBottom='1px solid black' px='12px' pb='6px' borderRadius='0' h='50px' placeholder={`Search the latest news on ${path}?`} />
                 <Box mx='10px'>
                   <SearchIcon fontSize='20px' onClick={() => SearchQuery }/>
                 </Box>
