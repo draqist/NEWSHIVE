@@ -11,7 +11,6 @@ const Trending = () => {
       Axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.customKey}&language=en&category=politics,health,entertainment`)
         .then(res => {
           setRes(res.data.results)
-          console.log(res.data.results)
         })
   } , [])
   

@@ -14,7 +14,6 @@ export const Banner = ({ category, domain }: { category: string, domain: string 
     Axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.customKey}&language=en&category=${category}&domain=${domain}`)
       .then(res => {
         setRes(res.data.results[0])
-        console.log(res.data.results[1])
       })
   }, [])
   return (

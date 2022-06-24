@@ -11,7 +11,6 @@ export const Sections = (props: any) => {
     Axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.customKey}&language=en&category=${props.section.toLowerCase()}`)
       .then(res => {
         setRes(res.data.results[1])
-        console.log(res.data.results[1])
       })
   } , [props.section])
   return (
