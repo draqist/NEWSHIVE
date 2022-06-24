@@ -15,7 +15,7 @@ export const Banner = ({ category, domain }: { category: string, domain: string 
       .then(res => {
         setRes(res.data.results[0])
       })
-  }, [])
+  }, [category, domain])
   return (
     <>
       <Box w={['', '', '100%']} h={['600px', '', '450px']}  bgImage={`url(${res?.image_url != null ? res.image_url : `${path}.jpg`})`}   zIndex='1'  color='white' px={['25px', '25px', '40px', '60px', '100px']} pos='relative' bgPosition='center' bgSize='cover'  bgRepeat='no-repeat' py='40px'>
