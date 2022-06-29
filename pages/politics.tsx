@@ -10,7 +10,6 @@ import { politics } from '../states';
 
 export default function Politics() {
   const [res, setRes] = useState<Trending[]>();
-  const [totalResults, setResults] = useState(1);
   const [error, setError] = useState<boolean>(false);
   const { pathname } = useRouter();
   let path = pathname.slice(1);
@@ -26,7 +25,6 @@ export default function Politics() {
     )
       .then((res) => {
         setRes(res.data.results);
-        setResults(res.data.totalResults);
       })
       .catch((err) => {
         console.log(err);
