@@ -1,36 +1,46 @@
-import { Box, Flex, Text } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
-import type { NextPage } from 'next'
-import { Banner } from '../components/Banner'
-import { Footer } from '../components/Footer'
-import Navbar from '../components/Navbar'
-import { Newsletter } from '../components/Newsletter'
-import { Sections } from '../components/Sections'
-import { Splash } from '../components/Splash'
-import Trending from '../components/Trending'
-import { sections, } from '../extra'
+import { Box } from '@chakra-ui/react';
+import type { NextPage } from 'next';
+import { Footer } from '../components/Footer';
+import Navbar from '../components/Navbar';
+import { Newsletter } from '../components/Newsletter';
+import { Sections } from '../components/Sections';
+import { Splash } from '../components/Splash';
+import Trending from '../components/Trending';
+import { sections } from '../extra';
+import { lazy, Suspense } from 'react';
+import BannerSpinner from '../components/BannerSpinner';
+
+interface BannerProps {
+  category: string;
+  domain: string;
+}
+const DynamicBanner = lazy(() => import('../components/Banner'));
 
 const Home: NextPage = () => {
   return (
     <>
-      <Splash/>
-      <Box bg='brand.bg' color='black'>
+      {/* <Splash /> */}
+      <Box bg="brand.bg" color="black">
         <Navbar />
-        <Box bgColor='#363434ba'>
-          <Banner category={'top'} domain='cnn' />
-        </Box>
+        <Suspense fallback={<BannerSpinner />}>
+          <DynamicBanner category={'top'} domain="cnn" />
+        </Suspense>
         <Trending />
-        <Box px={['25px', '', '40px', '60px', '100px']} mt={['20px','','60px']} mb={['','','40px']} >
-          {
-            sections.map((sec, id) => <Sections key={id} section={ sec.title }/>)
-          }
+        <Box
+          px={['25px', '', '40px', '60px', '100px']}
+          mt={['20px', '', '60px']}
+          mb={['', '', '40px']}
+        >
+          {sections.map((sec, id) => (
+            <Sections key={id} section={sec.title} />
+          ))}
         </Box>
         <Newsletter />
         <Footer />
         {/*  */}
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
