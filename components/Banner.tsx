@@ -35,7 +35,7 @@ function Banner({ category, domain }: { category: string; domain: string }) {
         color="white"
         px={['25px', '25px', '40px', '60px', '100px']}
         pos="relative"
-        bgPosition="center"
+        bgPosition="top center"
         bgSize="cover"
         bgRepeat="no-repeat"
         py="40px"
