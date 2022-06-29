@@ -1,96 +1,59 @@
-import { Box, Button, Flex, Heading } from '@chakra-ui/react';
+import { Heading, useToast } from '@chakra-ui/react';
 import Axios from 'axios';
-import { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import React, { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import BannerSpinner from '../components/BannerSpinner';
-import Navbar from '../components/Navbar';
 import { News } from '../components/News';
+import PageSectionLayout from '../components/PageSectionLayout';
 import { Trending } from '../components/types';
 import { politics } from '../states';
 
-
-interface BannerProps {
-  category: string;
-  domain: string;
-}
-const DynamicBanner = lazy(() => import('../components/Banner'));
-const Politics: NextPage = () => {
+export default function Politics() {
   const [res, setRes] = useState<Trending[]>();
   const [totalResults, setResults] = useState(1);
+  const [error, setError] = useState<boolean>(false);
   const { pathname } = useRouter();
   let path = pathname.slice(1);
   let [page, setPage] = useRecoilState(politics);
-  let arr: Array<number> = [];
   let dis = false;
   if (page === 1) {
     dis = true;
   }
+  const Toast = useToast();
   useEffect(() => {
     Axios.get(
       `https://newsdata.io/api/1/news?apikey=${process.env.maemoonah}&language=en&category=${path}&page=${page}`,
-    ).then((res) => {
-      setRes(res.data.results);
-      setResults(res.data.totalResults);
-    });
+    )
+      .then((res) => {
+        setRes(res.data.results);
+        setResults(res.data.totalResults);
+      })
+      .catch((err) => {
+        console.log(err);
+        setError(true);
+      });
   }, [path, page]);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  function scrollToref() {
-    // @ts-ignore
-    titleRef?.current.scrollIntoView({ behavior: 'smooth' });
-  }
   return (
-    <Box bg="brand.bg" h="100%" color="black">
-      <Navbar />
-      <Suspense fallback={<BannerSpinner />}>
-        <DynamicBanner category={path} domain="portsmouth" />
-      </Suspense>
-      <Box
-        ref={titleRef}
-        px={['25px', '', '40px', '60px', '100px']}
-        mt={['20px', '', '30px']}
-      >
+    <>
+      <PageSectionLayout path={path} dis={dis} page={page} setPage={setPage}>
         <Heading mb="30px"> Politics </Heading>
+        {error &&
+          Toast({
+            title: 'Apologies!, API Request failed',
+            description: 'The API request limit has been exhausted ',
+            status: 'error',
+            duration: 5000,
+            isClosable: true,
+            position: 'bottom',
+            containerStyle: {
+              width: '350px',
+              maxWidth: '100%',
+            },
+          })}
         {res?.map((data, id) => (
           <News data={data} key={id} />
         ))}
-      </Box>
-      <Flex
-        px={['25px', '', '40px', '60px', '100px']}
-        py={['20px', '', '30px']}
-        justifyContent={['space-between', '', 'center']}
-        gap={['', '', '500']}
-        alignItems="center"
-      >
-        <Button
-          px="20px"
-          w="90px"
-          py="10px"
-          isDisabled={dis}
-          colorScheme="blue"
-          onClick={() => {
-            setPage(page + 1);
-          }}
-        >
-          {' '}
-          Previous{' '}
-        </Button>
-        <Button
-          w="90px"
-          px="40px"
-          py="10px"
-          colorScheme="purple"
-          onClick={() => {
-            setPage(page + 1);
-            scrollToref();
-          }}
-        >
-          {' '}
-          Next{' '}
-        </Button>
-      </Flex>
-    </Box>
+      </PageSectionLayout>
+    </>
   );
-};
-export default Politics;
+}

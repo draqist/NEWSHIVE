@@ -1,10 +1,10 @@
 import { CloseIcon, SearchIcon } from '@chakra-ui/icons';
 import { Box, Button, Flex, Input, Link, Stack } from '@chakra-ui/react';
-import { useState } from 'react';
+import Axios from 'axios';
 import { motion } from 'framer-motion';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import Axios from 'axios';
+import { useState } from 'react';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);

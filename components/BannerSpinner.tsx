@@ -14,9 +14,10 @@ const BannerSpinner = () => {
       bgColor="brand.bg"
     >
       <Spinner
-        color="twitter.400"
-        w={['60px', '60px', '100px', '100px', '200px']}
-        h={['60px', '60px', '100px', '100px', '200px']}
+        color="gray.400"
+        w={['50px', '50px', '40px', '40px', '40px']}
+        h={['50px', '50px', '40px', '40px', '40px']}
+        thickness="2px"
       />
     </Center>
   );

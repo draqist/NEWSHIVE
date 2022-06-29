@@ -1,13 +1,13 @@
 {
   /* eslint-disable  react/no-unescaped-entities */
 }
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Box, Heading, Link, Tag, Text } from '@chakra-ui/react';
 import Axios from 'axios';
-import { useRouter } from 'next/router';
-import { useEffect, useState, startTransition } from 'react';
-import { Trending } from './types';
 import NextLink from 'next/link';
-import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { useRouter } from 'next/router';
+import { startTransition, useEffect, useState } from 'react';
+import { Trending } from './types';
 
 function Banner({ category, domain }: { category: string; domain: string }) {
   const { pathname } = useRouter();

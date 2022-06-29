@@ -6,7 +6,7 @@ const nextConfig = {
 module.exports = {
   nextConfig,
   env: {
-    customKey: process.env.customKey,
+    maemoonah: process.env.maemoonah,
     oldApi: process.env.oldApi,
     abdullahApi: process.env.abdullahApi,
     maemoonah: process.env.ckey,

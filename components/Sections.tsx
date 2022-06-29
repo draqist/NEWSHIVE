@@ -1,9 +1,9 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Box, Flex, Heading, Link, Stack, Text } from '@chakra-ui/react';
 import Axios from 'axios';
+import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
 import { Trending } from './types';
-import NextLink from 'next/link';
 
 export const Sections = (props: any) => {
   const [res, setRes] = useState<Trending>();
