@@ -10,7 +10,7 @@ export const Sections = (props: any) => {
   useEffect(() => {
     Axios.get(
       `https://newsdata.io/api/1/news?apikey=${
-        process.env.customKey
+        process.env.maemoonah
       }&language=en&category=${props.section.toLowerCase()}`,
     ).then((res) => {
       setRes(res.data.results[1]);

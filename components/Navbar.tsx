@@ -17,7 +17,7 @@ const Navbar = () => {
 
   function SearchQuery() {
     Axios.get(
-      `https://newsdata.io/api/1/news?apikey=${process.env.customKey}&language=en&category=${path}`,
+      `https://newsdata.io/api/1/news?apikey=${process.env.maemoonah}&language=en&category=${path}`,
     ).then((res) => {
       return setData(res.data.results);
     });

@@ -13,7 +13,11 @@ const BannerSpinner = () => {
       py="40px"
       bgColor="brand.bg"
     >
-      <Spinner color="twitter.400" w={['60px','60px','100px','100px',"200px"]} h={['60px','60px','100px','100px',"200px"]} />
+      <Spinner
+        color="twitter.400"
+        w={['60px', '60px', '100px', '100px', '200px']}
+        h={['60px', '60px', '100px', '100px', '200px']}
+      />
     </Center>
   );
 };

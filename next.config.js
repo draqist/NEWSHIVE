@@ -9,5 +9,6 @@ module.exports = {
     customKey: process.env.customKey,
     oldApi: process.env.oldApi,
     abdullahApi: process.env.abdullahApi,
+    maemoonah: process.env.ckey,
   },
 };

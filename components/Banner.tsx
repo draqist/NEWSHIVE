@@ -17,7 +17,7 @@ function Banner({ category, domain }: { category: string; domain: string }) {
   useEffect(() => {
     startTransition(() => {
       Axios.get(
-        `https://newsdata.io/api/1/news?apikey=${process.env.customKey}&language=en&category=${category}&domain=${domain}`,
+        `https://newsdata.io/api/1/news?apikey=${process.env.maemoonah}&language=en&category=${category}&domain=${domain}`,
       ).then((res) => {
         setRes(res.data.results[0]);
       });
