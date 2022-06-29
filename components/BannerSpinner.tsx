@@ -14,9 +14,9 @@ const BannerSpinner = () => {
       bgColor="brand.bg"
     >
       <Spinner
-        color="gray.400"
-        w={['50px', '50px', '40px', '40px', '40px']}
-        h={['50px', '50px', '40px', '40px', '40px']}
+        color="gray.700"
+        w={['40px', '40px', '40px', '40px', '40px']}
+        h={['40px', '40px', '40px', '40px', '40px']}
         thickness="2px"
       />
     </Center>
