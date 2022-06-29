@@ -19,7 +19,7 @@ const DynamicBanner = lazy(() => import('../components/Banner'));
 const Home: NextPage = () => {
   return (
     <>
-      <Splash />
+      {/* <Splash /> */}
       <Box bg="brand.bg" color="black">
         <Navbar />
         <Suspense fallback={<BannerSpinner />}>
