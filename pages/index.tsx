@@ -1,5 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import type { NextPage } from 'next';
+import { lazy, Suspense } from 'react';
+import BannerSpinner from '../components/BannerSpinner';
 import { Footer } from '../components/Footer';
 import Navbar from '../components/Navbar';
 import { Newsletter } from '../components/Newsletter';
@@ -7,8 +9,6 @@ import { Sections } from '../components/Sections';
 import { Splash } from '../components/Splash';
 import Trending from '../components/Trending';
 import { sections } from '../extra';
-import { lazy, Suspense } from 'react';
-import BannerSpinner from '../components/BannerSpinner';
 
 interface BannerProps {
   category: string;
@@ -19,7 +19,7 @@ const DynamicBanner = lazy(() => import('../components/Banner'));
 const Home: NextPage = () => {
   return (
     <>
-      {/* <Splash /> */}
+      <Splash />
       <Box bg="brand.bg" color="black">
         <Navbar />
         <Suspense fallback={<BannerSpinner />}>

@@ -1,9 +1,8 @@
-import { Box, Button, Flex, Heading } from '@chakra-ui/react';
+import { Box, Button, Flex } from '@chakra-ui/react';
 import React, { lazy, ReactNode, Suspense, useRef } from 'react';
 import { SetterOrUpdater } from 'recoil';
 import BannerSpinner from './BannerSpinner';
 import Navbar from './Navbar';
-import { News } from './News';
 
 interface BannerProps {
   category: string;

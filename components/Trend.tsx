@@ -1,8 +1,8 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Box, Heading, Link, Tag, Text } from '@chakra-ui/react';
-import React from 'react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
+import React from 'react';
 
 export const Trend = ({
   title,
