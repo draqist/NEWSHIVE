@@ -20,7 +20,7 @@ const Business: NextPage = () => {
   }
   useEffect(() => {
     Axios.get(
-      `https://newsdata.io/api/1/news?apikey=${process.env.maemoonah}&language=en&category=${path}&page=${page}`,
+      `https://newsdata.io/api/1/news?apikey=${process.env.REQUEST_API}&language=en&category=${path}&page=${page}`,
     ).then((res) => {
       setRes(res.data.results);
     });

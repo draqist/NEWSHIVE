@@ -16,7 +16,7 @@ const Tech: NextPage = () => {
   const [page, setPage] = useRecoilState(tech);
   useEffect(() => {
     Axios.get(
-      `https://newsdata.io/api/1/news?apikey=${process.env.maemoonah}&language=en&category=${path}&domain=techcrunch&page=${page}`,
+      `https://newsdata.io/api/1/news?apikey=${process.env.REQUEST_API}&language=en&category=${path}&domain=techcrunch&page=${page}`,
     ).then((res) => {
       setRes(res.data.results);
     });

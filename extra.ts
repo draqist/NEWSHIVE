@@ -1,5 +1,3 @@
-import { useRouter } from 'next/router';
-
 export const deepblue = '#141019';
 export const transition = {
   duration: 1.4,

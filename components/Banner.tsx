@@ -13,11 +13,10 @@ function Banner({ category, domain }: { category: string; domain: string }) {
   const { pathname } = useRouter();
   let path = pathname.slice(1);
   let [res, setRes] = useState<Trending>();
-
   useEffect(() => {
     startTransition(() => {
       Axios.get(
-        `https://newsdata.io/api/1/news?apikey=${process.env.maemoonah}&language=en&category=${category}&domain=${domain}`,
+        `https://newsdata.io/api/1/news?apikey=${process.env.REQUEST_API}&language=en&category=${category}&domain=${domain}`,
       ).then((res) => {
         setRes(res.data.results[0]);
       });

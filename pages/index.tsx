@@ -10,16 +10,12 @@ import { Splash } from '../components/Splash';
 import Trending from '../components/Trending';
 import { sections } from '../extra';
 
-interface BannerProps {
-  category: string;
-  domain: string;
-}
 const DynamicBanner = lazy(() => import('../components/Banner'));
 
 const Home: NextPage = () => {
   return (
     <>
-      <Splash />
+      {/* <Splash /> */}
       <Box bg="brand.bg" color="black">
         <Navbar />
         <Suspense fallback={<BannerSpinner />}>

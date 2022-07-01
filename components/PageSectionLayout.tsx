@@ -4,13 +4,6 @@ import { SetterOrUpdater } from 'recoil';
 import BannerSpinner from './BannerSpinner';
 import Navbar from './Navbar';
 
-interface BannerProps {
-  category: string;
-  domain: string;
-}
-interface Children {
-  children: JSX.Element;
-}
 const DynamicBanner = lazy(() => import('../components/Banner'));
 
 const PageSectionLayout = ({
@@ -31,6 +24,7 @@ const PageSectionLayout = ({
     // @ts-ignore
     titleRef?.current.scrollIntoView({ behavior: 'smooth' });
   }
+
   return (
     <Box bg="brand.bg" h="100%" color="black">
       <Navbar />
@@ -53,7 +47,7 @@ const PageSectionLayout = ({
       >
         <Button
           px="20px"
-          w="90px"
+          w="110px"
           py="10px"
           isDisabled={dis}
           colorScheme="blue"
@@ -65,7 +59,7 @@ const PageSectionLayout = ({
           Previous{' '}
         </Button>
         <Button
-          w="90px"
+          w="110px"
           px="40px"
           py="10px"
           colorScheme="purple"

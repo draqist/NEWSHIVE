@@ -6,9 +6,6 @@ const nextConfig = {
 module.exports = {
   nextConfig,
   env: {
-    maemoonah: process.env.maemoonah,
-    oldApi: process.env.oldApi,
-    abdullahApi: process.env.abdullahApi,
-    maemoonah: process.env.ckey,
+    REQUEST_API: process.env.CUSTOM_KEY,
   },
 };
