@@ -107,7 +107,7 @@ const Navbar = () => {
             <Box>
               <NextLink href="/politics" passHref>
                 <Link _focus={{ outline: 0 }} textTransform="uppercase">
-                  Politics & Finance
+                  Politics
                 </Link>
               </NextLink>
             </Box>
