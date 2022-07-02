@@ -39,8 +39,9 @@ export const News = ({ data }: { data: Trending }) => {
               {' '}
               {data.title}{' '}
             </Heading>
-            <Box h={['', '', '120px']} mb={['', '', '10px']} overflow={'clip'}>
+            <Box h={['', '', '120px']} mb={['', '', '10px']} overflow={'hidden'}>
               <Text fontSize={['12px', '', '']}> {data.description} </Text>
+              {/* <Text fontSize={['10px', '', '']}> {data.creator} </Text> */}
             </Box>
             <NextLink href="">
               <Link

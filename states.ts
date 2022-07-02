@@ -25,4 +25,27 @@ const business = atom({
   default: 1,
 });
 
-export { business, sports, health, tech, entertainment, politics };
+const searchData = atom({
+  key: 'search_response',
+  default: [],
+});
+const SearchQueryText = atom({
+  key: 'search_query_text',
+  default: '',
+});
+const pager = atom({
+  key: 'pager',
+  default: 1
+})
+
+export {
+  business,
+  sports,
+  health,
+  tech,
+  entertainment,
+  politics,
+  searchData,
+  SearchQueryText,
+  pager
+};

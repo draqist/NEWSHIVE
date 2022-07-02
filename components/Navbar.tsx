@@ -5,21 +5,25 @@ import { motion } from 'framer-motion';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { useRecoilState } from 'recoil';
+import { searchData, SearchQueryText } from '../states';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [search, setSearch] = useState(false);
-  const [data, setData] = useState([]);
+  const [data, setData] = useRecoilState(searchData);
+  const Router = useRouter();
   const { pathname } = useRouter();
   let path = pathname.slice(1);
+  const [query, setQuery] = useRecoilState(SearchQueryText);
   let display = 'box';
   search ? (display = 'none') : 'box';
 
   function SearchQuery() {
     Axios.get(
-      `https://newsdata.io/api/1/news?apikey=${process.env.REQUEST_API}&language=en&category=${path}`,
-    ).then((res) => {
-      return setData(res.data.results);
+      `https://newsdata.io/api/1/news?apikey=${process.env.REQUEST_API}&q=${query}&language=en`,
+    ).then((response) => {
+      setData(response.data.results);
     });
   }
   return (
@@ -150,10 +154,19 @@ const Navbar = () => {
               pb="6px"
               borderRadius="0"
               h="50px"
+              type="text"
               placeholder={`Search the latest news on ${path}?`}
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
             />
             <Box mx="10px">
-              <SearchIcon fontSize="20px" onClick={() => SearchQuery} />
+              <SearchIcon
+                fontSize="20px"
+                onClick={() => {
+                  SearchQuery();
+                  Router.push('/search');
+                }}
+              />
             </Box>
             <CloseIcon onClick={() => setSearch(false)} ml="12px" />
           </Flex>

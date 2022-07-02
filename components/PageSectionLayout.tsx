@@ -52,7 +52,7 @@ const PageSectionLayout = ({
           isDisabled={dis}
           colorScheme="blue"
           onClick={() => {
-            setPage(page + 1);
+            setPage(page - 1);
           }}
         >
           {' '}
