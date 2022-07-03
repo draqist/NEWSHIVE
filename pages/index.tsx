@@ -7,10 +7,11 @@ import Navbar from '../components/Navbar';
 import { Newsletter } from '../components/Newsletter';
 import { Sections } from '../components/Sections';
 import { Splash } from '../components/Splash';
-import Trending from '../components/Trending';
+import TrendSpinner from '../components/TrendSpinner';
 import { sections } from '../extra';
 
 const DynamicBanner = lazy(() => import('../components/Banner'));
+const DynamicTrending = lazy(() => import('../components/Trending'));
 
 const Home: NextPage = () => {
   return (
@@ -21,7 +22,9 @@ const Home: NextPage = () => {
         <Suspense fallback={<BannerSpinner />}>
           <DynamicBanner category={'top'} domain="cnn" />
         </Suspense>
-        <Trending />
+        <Suspense fallback={<TrendSpinner />}>
+          <DynamicTrending />
+        </Suspense>
         <Box
           px={['25px', '', '40px', '60px', '100px']}
           mt={['20px', '', '60px']}

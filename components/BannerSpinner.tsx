@@ -13,12 +13,7 @@ const BannerSpinner = () => {
       py="40px"
       bgColor="brand.bg"
     >
-      <Spinner
-        color="gray.700"
-        w={['40px', '40px', '40px', '40px', '40px']}
-        h={['40px', '40px', '40px', '40px', '40px']}
-        thickness="2px"
-      />
+      <Spinner color="gray.700" w={'40px'} h={'40px'} thickness="2px" />
     </Center>
   );
 };

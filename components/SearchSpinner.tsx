@@ -3,13 +3,17 @@ import React from 'react';
 
 const SearchSpinner = () => {
   return (
-    <Center h="100vh" w="100vw" bg="brand.bg">
-      <Spinner
-        color="gray.700"
-        w={'40px'}
-        h={'40px'}  
-        thickness="2px"
-      />
+    <Center
+      h="100vh"
+      w="100vw"
+      bg="brand.bg"
+      zIndex="3"
+      color="white"
+      px={['25px', '25px', '40px', '60px', '100px']}
+      pos="relative"
+      py="40px"
+    >
+      <Spinner color="gray.700" w={'40px'} h={'40px'} thickness="2px" />
     </Center>
   );
 };

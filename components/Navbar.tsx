@@ -6,12 +6,13 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { searchData, SearchQueryText } from '../states';
+import { searchData, SearchQueryText, resultTally } from '../states';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [search, setSearch] = useState(false);
   const [data, setData] = useRecoilState(searchData);
+  const [totalresult, setTotalResult] = useRecoilState(resultTally);
   const Router = useRouter();
   const { pathname } = useRouter();
   let path = pathname.slice(1);
@@ -24,6 +25,7 @@ const Navbar = () => {
       `https://newsdata.io/api/1/news?apikey=${process.env.REQUEST_API}&q=${query}&language=en`,
     ).then((response) => {
       setData(response.data.results);
+      setTotalResult(response.data.totalResults);
     });
   }
   return (

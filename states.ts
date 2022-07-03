@@ -35,8 +35,12 @@ const SearchQueryText = atom({
 });
 const pager = atom({
   key: 'pager',
-  default: 1
-})
+  default: 1,
+});
+const resultTally = atom({
+  key: 'total_results',
+  default: 1,
+});
 
 export {
   business,
@@ -47,5 +51,6 @@ export {
   politics,
   searchData,
   SearchQueryText,
-  pager
+  pager,
+  resultTally,
 };

@@ -71,7 +71,7 @@ function Banner({ category, domain }: { category: string; domain: string }) {
           >
             {res?.description}
           </Text>
-          <NextLink href={`${res?.image_url}`} passHref>
+          <NextLink href={`${res?.link}`} passHref>
             <Link
               isExternal
               mt="10px"

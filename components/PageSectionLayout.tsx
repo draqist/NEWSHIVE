@@ -1,6 +1,8 @@
 import { Box, Button, Flex } from '@chakra-ui/react';
+import Router, { useRouter } from 'next/router';
 import React, { lazy, ReactNode, Suspense, useRef } from 'react';
-import { SetterOrUpdater } from 'recoil';
+import { SetterOrUpdater, useRecoilValue } from 'recoil';
+import { resultTally } from '../states';
 import BannerSpinner from './BannerSpinner';
 import Navbar from './Navbar';
 
@@ -24,7 +26,12 @@ const PageSectionLayout = ({
     // @ts-ignore
     titleRef?.current.scrollIntoView({ behavior: 'smooth' });
   }
-
+  const nextChecker = useRecoilValue(resultTally);
+  const Router = useRouter();
+  let click = false;
+  if (page === nextChecker) {
+    click = true;
+  }
   return (
     <Box bg="brand.bg" h="100%" color="black">
       <Navbar />
@@ -52,7 +59,8 @@ const PageSectionLayout = ({
           isDisabled={dis}
           colorScheme="blue"
           onClick={() => {
-            setPage(page - 1);
+            // setPage(page - 1);
+            Router.back();
           }}
         >
           {' '}
@@ -67,6 +75,7 @@ const PageSectionLayout = ({
             setPage(page + 1);
             scrollToref();
           }}
+          isDisabled={click}
         >
           {' '}
           Next{' '}
