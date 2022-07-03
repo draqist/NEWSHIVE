@@ -1,4 +1,3 @@
-import { EmailIcon } from '@chakra-ui/icons';
 import { Box, Button, Flex, Heading, Input, Text } from '@chakra-ui/react';
 import { MdOutlineEmail } from 'react-icons/md';
 
@@ -19,7 +18,7 @@ export const Newsletter = () => {
           Subscribe to{' '}
           <Text as="span" fontFamily="Oswald" textTransform="uppercase">
             {' '}
-            DraqBureau{' '}
+            NEWSHIVE{' '}
           </Text>{' '}
         </Heading>
         <Text fontSize="20px">

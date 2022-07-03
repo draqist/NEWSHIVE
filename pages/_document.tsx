@@ -1,7 +1,7 @@
 // pages/_document.js
 
 import { ColorModeScript } from '@chakra-ui/react';
-import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
+import NextDocument, { Head, Html, Main, NextScript } from 'next/document';
 import theme from '../theme';
 
 export default class Document extends NextDocument {
@@ -17,8 +17,8 @@ export default class Document extends NextDocument {
           rel="stylesheet"
         />
         <meta
-          name="DraqBureau"
-          content="Get the latest,verified news from DraqBureau"
+          name="newshiveu"
+          content="Get the latest,verified news from newshiveu"
         />
         <Head />
         <body>

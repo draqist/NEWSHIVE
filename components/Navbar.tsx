@@ -84,7 +84,7 @@ const Navbar = () => {
               letterSpacing="-1px"
               color="gray.700"
             >
-              DRAQBUREAU
+              NEWSHIVE
             </Link>
           </NextLink>
           <Flex
@@ -179,7 +179,7 @@ const Navbar = () => {
           letterSpacing="-2px"
           color="gray.700"
         >
-          <Link href="/">DRAQBUREAU</Link>
+          <Link href="/">NEWSHIVE</Link>
         </Box>
         <Button
           display={display}

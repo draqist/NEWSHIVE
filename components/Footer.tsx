@@ -1,10 +1,9 @@
 {
   /* eslint-disable  react/no-unescaped-entities */
 }
-import { EmailIcon, ExternalLinkIcon } from '@chakra-ui/icons';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Box, Flex, Heading, Link as CLink, Text } from '@chakra-ui/react';
-import NextLink from 'next/link';
-import Link from 'next/link';
+import { default as Link, default as NextLink } from 'next/link';
 import { routes } from '../extra';
 
 export const Footer = () => {
@@ -31,11 +30,11 @@ export const Footer = () => {
             color="gray.700"
             mb="6px"
           >
-            DRAQBUREAU
+            newshiveU
           </Box>
           <Text>
             {' '}
-            <strong> DraqBureau </strong> produces innovative and essential
+            <strong> NEWSHIVE </strong> produces innovative and essential
             investigative journalism, opinions and analysis. Keeping you
             up-to-date with the latest news in all aspects of worldly affairs.{' '}
             <br />
@@ -76,7 +75,7 @@ export const Footer = () => {
             >
               About
             </Heading>
-            <Text mt="14px">About DRAQBUREAU</Text>
+            <Text mt="14px">About NEWSHIVE</Text>
             <Text mt="14px">Contact</Text>
           </Box>
           <Box fontWeight="300">
@@ -114,7 +113,7 @@ export const Footer = () => {
         pb="20px"
       >
         {' '}
-        2022 DRAQBUREAU - All Rights Reserved
+        2022 NEWSHIVE - All Rights Reserved
       </Text>
     </>
   );
