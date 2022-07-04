@@ -34,7 +34,7 @@ const PageSectionLayout = ({
   }
   return (
     <Box bg="brand.bg" h="100%" color="black">
-      <Navbar />
+      <Navbar path={path} />
       <Suspense fallback={<BannerSpinner />}>
         <DynamicBanner category={path} domain="portsmouth" />
       </Suspense>

@@ -30,7 +30,7 @@ export const Footer = () => {
             color="gray.700"
             mb="6px"
           >
-            newshiveU
+            NEWSHIVE
           </Box>
           <Text>
             {' '}

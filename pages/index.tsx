@@ -18,7 +18,7 @@ const Home: NextPage = () => {
     <>
       {/* <Splash /> */}
       <Box bg="brand.bg" color="black">
-        <Navbar />
+        <Navbar path="" />
         <Suspense fallback={<BannerSpinner />}>
           <DynamicBanner category={'top'} domain="cnn" />
         </Suspense>

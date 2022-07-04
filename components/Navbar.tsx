@@ -8,14 +8,12 @@ import { useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { searchData, SearchQueryText, resultTally } from '../states';
 
-const Navbar = () => {
+const Navbar = ({ path }: { path: string }) => {
   const [nav, setNav] = useState(false);
   const [search, setSearch] = useState(false);
   const [data, setData] = useRecoilState(searchData);
   const [totalresult, setTotalResult] = useRecoilState(resultTally);
   const Router = useRouter();
-  const { pathname } = useRouter();
-  let path = pathname.slice(1);
   const [query, setQuery] = useRecoilState(SearchQueryText);
   let display = 'box';
   search ? (display = 'none') : 'box';
@@ -157,9 +155,14 @@ const Navbar = () => {
               borderRadius="0"
               h="50px"
               type="text"
-              placeholder={`Search the latest news on ${path}?`}
+              placeholder={
+                path === ''
+                  ? `Search the latest news around the world`
+                  : `Search the latest ${path} news !`
+              }
               value={query}
               onChange={(e) => setQuery(e.target.value)}
+              autoFocus={true}
             />
             <Box mx="10px">
               <SearchIcon

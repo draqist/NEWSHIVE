@@ -38,7 +38,7 @@ const SearchResults = () => {
   }, [query, page]);
   return (
     <Box bg="brand.bg" color="black">
-      <Navbar />
+      <Navbar path="" />
       <Suspense fallback={<SearchSpinner />}>
         <Box
           pos="relative"
