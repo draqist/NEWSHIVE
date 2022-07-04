@@ -84,7 +84,7 @@ function Banner({ category, domain }: { category: string; domain: string }) {
               outline="0"
               _focus={{ outline: 0 }}
               textTransform="uppercase"
-              color="twitter.300"
+              color="twitter.500"
               fontWeight="100"
               textShadow={'1px 1px 2px rgba(0,0,0,.5)'}
             >
