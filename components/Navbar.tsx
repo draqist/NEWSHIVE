@@ -1,6 +1,6 @@
 import { CloseIcon, SearchIcon } from '@chakra-ui/icons';
 import { Box, Button, Flex, Input, Link, Stack } from '@chakra-ui/react';
-import Axios from 'axios';
+import Axios, { AxiosError } from 'axios';
 import { motion } from 'framer-motion';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
@@ -18,13 +18,17 @@ const Navbar = ({ path }: { path: string }) => {
   let display = 'box';
   search ? (display = 'none') : 'box';
 
-  function SearchQuery() {
-    Axios.get(
-      `https://newsdata.io/api/1/news?apikey=${process.env.REQUEST_API}&q=${query}&language=en`,
-    ).then((response) => {
+  async function SearchQuery() {
+    try {
+      const response = await Axios.get(
+        `https://newsdata.io/api/1/news?apikey=${process.env.REQUEST_API}&q=${query}&language=en`,
+      )
       setData(response.data.results);
       setTotalResult(response.data.totalResults);
-    });
+    } catch (error) {
+      const err = error as AxiosError
+      console.log(err?.message)
+    }
   }
   return (
     <>
