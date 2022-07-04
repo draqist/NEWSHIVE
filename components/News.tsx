@@ -40,7 +40,7 @@ export const News = ({ data }: { data: Trending }) => {
               {data.title}{' '}
             </Heading>
             <Box
-              h={['200px', '', '120px']}
+              h={['100px', '', '120px']}
               mb={['', '', '10px']}
               overflow={'hidden'}
             >
@@ -57,6 +57,8 @@ export const News = ({ data }: { data: Trending }) => {
                 _focus={{ outline: 0 }}
                 textTransform="uppercase"
                 fontWeight="300"
+                position='fixed' bottom='0'
+                zIndex='3'
               >
                 {' '}
                 Read article <ExternalLinkIcon />{' '}
