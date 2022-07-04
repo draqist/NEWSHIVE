@@ -34,13 +34,13 @@ export const News = ({ data }: { data: Trending }) => {
           >
             <Heading
               fontSize={['14px', '', '14px', '14px']}
-              mb={['24px', '', '10px']}
+              mb={['16px', '', '10px']}
             >
               {' '}
               {data.title}{' '}
             </Heading>
             <Box
-              h={['100px', '', '120px']}
+              h={['110px', '', '120px']}
               mb={['', '', '10px']}
               overflow={'hidden'}
             >
