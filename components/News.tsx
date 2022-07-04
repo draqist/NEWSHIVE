@@ -57,7 +57,6 @@ export const News = ({ data }: { data: Trending }) => {
                 _focus={{ outline: 0 }}
                 textTransform="uppercase"
                 fontWeight="300"
-                position='fixed' bottom='0'
                 zIndex='3'
               >
                 {' '}
