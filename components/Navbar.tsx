@@ -22,12 +22,12 @@ const Navbar = ({ path }: { path: string }) => {
     try {
       const response = await Axios.get(
         `https://newsdata.io/api/1/news?apikey=${process.env.REQUEST_API}&q=${query}&language=en`,
-      )
+      );
       setData(response.data.results);
       setTotalResult(response.data.totalResults);
     } catch (error) {
-      const err = error as AxiosError
-      console.log(err?.message)
+      const err = error as AxiosError;
+      console.log(err?.message);
     }
   }
   return (
@@ -164,6 +164,7 @@ const Navbar = ({ path }: { path: string }) => {
                   ? `Search the latest news around the world`
                   : `Search the latest ${path} news !`
               }
+              _placeholder={{color: 'black'}}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               autoFocus={true}

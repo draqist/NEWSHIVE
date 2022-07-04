@@ -60,7 +60,11 @@ function Banner({ category, domain }: { category: string; domain: string }) {
             {/* @ts-ignore */}
             {new Date(res?.pubDate).toUTCString()}
           </Text>
-          <Heading fontSize={['18px', '30px', '30px']} my="20px" textShadow={'1px 1px 2px rgba(0,0,0,.4)'} >
+          <Heading
+            fontSize={['18px', '30px', '30px']}
+            my="20px"
+            textShadow={'1px 1px 2px rgba(0,0,0,.4)'}
+          >
             {' '}
             {res?.title}{' '}
           </Heading>
