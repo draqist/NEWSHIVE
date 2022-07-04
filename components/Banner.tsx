@@ -13,6 +13,7 @@ function Banner({ category, domain }: { category: string; domain: string }) {
   const { pathname } = useRouter();
   let path = pathname.slice(1);
   let [res, setRes] = useState<Trending>();
+  const d = new Date();
   useEffect(() => {
     startTransition(() => {
       Axios.get(
@@ -47,7 +48,7 @@ function Banner({ category, domain }: { category: string; domain: string }) {
           right={['25px', '25px', '40px', '60px', '100px']}
           left={['25px', '25px', '40px', '60px', '100px']}
         >
-          <Text textShadow={'1px 1px 2px rgba(0,0,0,.4)'}>
+          <Text textShadow={'1px 1px 2px rgba(0,0,0,.5)'}>
             <Tag
               variant="solid"
               textTransform="capitalize"
@@ -58,12 +59,12 @@ function Banner({ category, domain }: { category: string; domain: string }) {
               {res?.category[0]}
             </Tag>
             {/* @ts-ignore */}
-            {new Date(res?.pubDate).toUTCString()}
+            {res?.pubDate ? new Date(res?.pubDate).toUTCString() : d.toUTCString()}
           </Text>
           <Heading
             fontSize={['18px', '30px', '30px']}
             my="20px"
-            textShadow={'1px 1px 2px rgba(0,0,0,.4)'}
+            textShadow={'1px 1px 2px rgba(0,0,0,.5)'}
           >
             {' '}
             {res?.title}{' '}
@@ -72,7 +73,7 @@ function Banner({ category, domain }: { category: string; domain: string }) {
             fontSize={['16px', '', '']}
             fontFamily="Poppins"
             fontWeight="600"
-            textShadow={'1px 1px 2px rgba(0,0,0,.4)'}
+            textShadow={'1px 1px 2px rgba(0,0,0,.5)'}
           >
             {res?.description}
           </Text>
