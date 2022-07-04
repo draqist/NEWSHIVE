@@ -52,7 +52,7 @@ export const News = ({ data }: { data: Trending }) => {
                 href={data.link}
                 isExternal
                 display="block"
-                mt={['0', '0', '0']}
+                mb={['10px', '0', '0']}
                 outline="0"
                 _focus={{ outline: 0 }}
                 textTransform="uppercase"
