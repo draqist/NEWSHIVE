@@ -26,10 +26,10 @@ export const News = ({ data }: { data: Trending }) => {
             {data.title}{' '}
           </Heading>
         </Flex>
-        <Stack direction={['column', 'row']} gap={['10', '', '2']}>
+        <Stack direction={['column', 'row']} gap={['2', '', '2']}>
           <Box
             w={['', '', '200px', '240px', '240px']}
-            h={['150px', '', '240px']}
+            h={['240px', '', '240px']}
             mb={['26px', '20px', '0']}
           >
             <Heading
@@ -40,19 +40,19 @@ export const News = ({ data }: { data: Trending }) => {
               {data.title}{' '}
             </Heading>
             <Box
-              h={['110px', '', '120px']}
+              h={['180px', '', '120px']}
               mb={['', '', '10px']}
-              overflow={'hidden'}
+              overflow='clip'
+              textOverflow='clip'
             >
               <Text fontSize={['12px', '', '']}> {data.description} </Text>
-              {/* <Text fontSize={['10px', '', '']}> {data.creator} </Text> */}
             </Box>
             <NextLink href="">
               <Link
                 href={data.link}
                 isExternal
                 display="block"
-                mt={['1rem', '0', '0']}
+                mt={['0', '0', '0']}
                 outline="0"
                 _focus={{ outline: 0 }}
                 textTransform="uppercase"
