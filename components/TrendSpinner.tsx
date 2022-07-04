@@ -14,12 +14,24 @@ const TrendSpinner = () => {
         direction={['column', 'column', 'row']}
         mt={['14px', '30px']}
         w="100%"
+        h={['600px','', 'unset']}
       >
         <Center
           color="black"
-          flexBasis={['100%', '', '23%']}
+          flexBasis={['100%', '100%', '23%']}
           mt={['20px', '', '0']}
           h="200px"
+          w={['100%','','unset']}
+          bgColor="rgba(0,0,0,.1)"
+        >
+          <Spinner color="gray.700" w={'40px'} h={'40px'} thickness="2px" />
+        </Center>
+        <Center
+          color="black"
+          flexBasis={['100%', '', '23%']}
+          mt={['20px', '', '0']}
+          h={['200px','',"200px"]}
+          w={['100%','','unset']}
           bgColor="rgba(0,0,0,.1)"
         >
           <Spinner color="gray.700" w={'40px'} h={'40px'} thickness="2px" />
@@ -29,6 +41,7 @@ const TrendSpinner = () => {
           flexBasis={['100%', '', '23%']}
           mt={['20px', '', '0']}
           h="200px"
+          w={['100%','','unset']}
           bgColor="rgba(0,0,0,.1)"
         >
           <Spinner color="gray.700" w={'40px'} h={'40px'} thickness="2px" />
@@ -38,15 +51,7 @@ const TrendSpinner = () => {
           flexBasis={['100%', '', '23%']}
           mt={['20px', '', '0']}
           h="200px"
-          bgColor="rgba(0,0,0,.1)"
-        >
-          <Spinner color="gray.700" w={'40px'} h={'40px'} thickness="2px" />
-        </Center>
-        <Center
-          color="black"
-          flexBasis={['100%', '', '23%']}
-          mt={['20px', '', '0']}
-          h="200px"
+          w={['100%','','unset']}
           bgColor="rgba(0,0,0,.1)"
         >
           <Spinner color="gray.700" w={'40px'} h={'40px'} thickness="2px" />
