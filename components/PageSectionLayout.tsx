@@ -29,7 +29,7 @@ const PageSectionLayout = ({
   const nextChecker = useRecoilValue(resultTally);
   const Router = useRouter();
   let click = false;
-  if (page === nextChecker) {
+  if (page === nextChecker - 1) {
     click = true;
   }
   return (

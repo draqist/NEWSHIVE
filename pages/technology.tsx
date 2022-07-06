@@ -7,18 +7,20 @@ import { useRecoilState } from 'recoil';
 import { News } from '../components/News';
 import PageSectionLayout from '../components/PageSectionLayout';
 import { Trending } from '../components/types';
-import { tech } from '../states';
+import { tech,resultTally } from '../states';
 
 const Tech: NextPage = () => {
   const [res, setRes] = useState<Trending[]>();
   const { pathname } = useRouter();
   let path = pathname.slice(1);
   const [page, setPage] = useRecoilState(tech);
+  let [tally, setTally] = useRecoilState(resultTally);
   useEffect(() => {
     Axios.get(
       `https://newsdata.io/api/1/news?apikey=${process.env.REQUEST_API}&language=en&category=${path}&domain=techcrunch&page=${page}`,
     ).then((res) => {
       setRes(res.data.results);
+      setTally(res.data.totalResults);
     });
   }, [path, page]);
   let dis = false;

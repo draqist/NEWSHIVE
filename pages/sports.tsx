@@ -7,7 +7,7 @@ import { useRecoilState } from 'recoil';
 import { News } from '../components/News';
 import PageSectionLayout from '../components/PageSectionLayout';
 import { Trending } from '../components/types';
-import { sports } from '../states';
+import { resultTally, sports } from '../states';
 
 const Sports: NextPage = () => {
   const [res, setRes] = useState<Trending[]>();
@@ -15,6 +15,7 @@ const Sports: NextPage = () => {
   let path = pathname.slice(1);
   let dis = false;
   const [page, setPage] = useRecoilState(sports);
+  let [tally, setTally] = useRecoilState(resultTally);
   if (page === 1) {
     dis = true;
   }
@@ -24,6 +25,7 @@ const Sports: NextPage = () => {
       `https://newsdata.io/api/1/news?apikey=${process.env.REQUEST_API}&language=en&category=${path}&domain=skysports,espn&page=${page}`,
     ).then((res) => {
       setRes(res.data.results);
+      setTally(res.data.totalResults);
     });
   }, [path, page]);
 

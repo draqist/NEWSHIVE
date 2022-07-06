@@ -7,13 +7,15 @@ import { useRecoilState } from 'recoil';
 import { News } from '../components/News';
 import PageSectionLayout from '../components/PageSectionLayout';
 import { Trending } from '../components/types';
-import { business } from '../states';
+import { business, resultTally } from '../states';
 
 const Business: NextPage = () => {
   const [res, setRes] = useState<Trending[]>();
   const { pathname } = useRouter();
   let path = pathname.slice(1);
   const [page, setPage] = useRecoilState(business);
+
+  let [tally, setTally] = useRecoilState(resultTally);
   let dis = false;
   if (page === 1) {
     dis = true;
@@ -23,6 +25,7 @@ const Business: NextPage = () => {
       `https://newsdata.io/api/1/news?apikey=${process.env.REQUEST_API}&language=en&category=${path}&page=${page}`,
     ).then((res) => {
       setRes(res.data.results);
+      setTally(res.data.totalResults);
     });
   }, [path, page]);
 

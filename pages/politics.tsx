@@ -6,7 +6,7 @@ import { useRecoilState } from 'recoil';
 import { News } from '../components/News';
 import PageSectionLayout from '../components/PageSectionLayout';
 import { Trending } from '../components/types';
-import { politics } from '../states';
+import { politics, resultTally } from '../states';
 
 export default function Politics() {
   const [res, setRes] = useState<Trending[]>();
@@ -14,6 +14,7 @@ export default function Politics() {
   const { pathname } = useRouter();
   let path = pathname.slice(1);
   let [page, setPage] = useRecoilState(politics);
+  let [tally, setTally] = useRecoilState(resultTally);
   let dis = false;
   if (page === 1) {
     dis = true;
@@ -25,6 +26,8 @@ export default function Politics() {
     )
       .then((res) => {
         setRes(res.data.results);
+        setTally(res.data.totalResults);
+
       })
       .catch((err) => {
         console.log(err);
