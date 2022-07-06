@@ -1,7 +1,7 @@
 import { Heading, useToast } from '@chakra-ui/react';
 import Axios from 'axios';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { News } from '../components/News';
 import PageSectionLayout from '../components/PageSectionLayout';
@@ -26,7 +26,7 @@ export default function Politics() {
     )
       .then((res) => {
         setRes(res.data.results);
-        setTally(res.data.totalResults);
+        setTally(Math.ceil(Math.ceil(res.data.totalResults / 10) / 10));
 
       })
       .catch((err) => {

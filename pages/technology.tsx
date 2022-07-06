@@ -2,12 +2,12 @@ import { Heading } from '@chakra-ui/react';
 import Axios from 'axios';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { News } from '../components/News';
 import PageSectionLayout from '../components/PageSectionLayout';
 import { Trending } from '../components/types';
-import { tech,resultTally } from '../states';
+import { resultTally, tech } from '../states';
 
 const Tech: NextPage = () => {
   const [res, setRes] = useState<Trending[]>();
@@ -20,7 +20,7 @@ const Tech: NextPage = () => {
       `https://newsdata.io/api/1/news?apikey=${process.env.REQUEST_API}&language=en&category=${path}&domain=techcrunch&page=${page}`,
     ).then((res) => {
       setRes(res.data.results);
-      setTally(res.data.totalResults);
+      setTally(Math.ceil(res.data.totalResults / 10));
     });
   }, [path, page]);
   let dis = false;
