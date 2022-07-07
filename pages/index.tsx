@@ -1,4 +1,5 @@
 import { Box } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 import type { NextPage } from 'next';
 import { lazy, Suspense } from 'react';
 import BannerSpinner from '../components/BannerSpinner';
@@ -17,7 +18,7 @@ const Home: NextPage = () => {
   return (
     <>
       {/* <Splash /> */}
-      <Box bg="brand.bg" color="black">
+      <Box as={motion.div} exit={{opacity:0,}} initial={{ opacity: 0,}} animate={{opacity: 1}} bg="brand.bg" color="black">
         <Navbar path="" />
         <Suspense fallback={<BannerSpinner />}>
           <DynamicBanner category={'top'} domain="cnn" />

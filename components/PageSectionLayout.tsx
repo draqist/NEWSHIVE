@@ -1,6 +1,7 @@
 import { Box, Button, Flex } from '@chakra-ui/react';
-import Router, { useRouter } from 'next/router';
-import React, { lazy, ReactNode, Suspense, useRef } from 'react';
+import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
+import { lazy, ReactNode, Suspense, useRef } from 'react';
 import { SetterOrUpdater, useRecoilValue } from 'recoil';
 import { resultTally } from '../states';
 import BannerSpinner from './BannerSpinner';
@@ -33,7 +34,7 @@ const PageSectionLayout = ({
     click = true;
   }
   return (
-    <Box bg="brand.bg" h="100%" color="black">
+    <Box as={motion.div} exit={{opacity:0, transition: {duration: 1}}} initial={{ opacity: 0,}} animate={{opacity: 1}} bg="brand.bg" h="100%" color="black">
       <Navbar path={path} />
       <Suspense fallback={<BannerSpinner />}>
         <DynamicBanner category={path} domain="portsmouth" />

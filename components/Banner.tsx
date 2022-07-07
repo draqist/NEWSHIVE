@@ -39,6 +39,7 @@ function Banner({ category, domain }: { category: string; domain: string }) {
         bgSize="cover"
         bgRepeat="no-repeat"
         py="40px"
+        bgColor="gray.800"
       >
         <Box
           pos="absolute"

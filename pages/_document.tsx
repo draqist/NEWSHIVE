@@ -16,10 +16,20 @@ export default class Document extends NextDocument {
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap"
           rel="stylesheet"
         />
+        <title>NEWSHIVE</title>
+        <meta name="description" content="An up-to-date news website on the current happenings in the world" />
         <meta
-          name="newshiveu"
-          content="Get the latest,verified news from newshiveu"
+          name="Newshive"
+          content="Get the latest,verified news from newshive"
         />
+        <meta
+          property="og:image" content='https://i.ibb.co/Z1QT3sf/newshive.png' />
+        <meta
+          property="og:description" content='DESCRIPTION OF YOUR SITE' />
+        <meta property="og:url" content='https://newshive.vercel.app' />
+        <meta property='og:image:width' content='1366' />
+        <meta property='og:image:height' content='63  7' />
+
         <Head />
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
