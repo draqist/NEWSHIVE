@@ -29,13 +29,6 @@ export default class Document extends NextDocument {
         <meta name="twitter:title" content="NEWSHIVE"/>
         <meta name="twitter:description" content="Newshive is a news web application where you get the latest news on health, finance, sports, politics and entertainment"/>
         <meta name="twitter:image" content="https://i.ibb.co/Z1QT3sf/newshive.png"/>
-        <meta
-          property="og:image" content='https://i.ibb.co/Z1QT3sf/newshive.png' />
-        <meta
-          property="og:description" content='Newshive is a news web application where you get the latest news on health, finance, sports, politics and entertainment' />
-        <meta property="og:url" content='https://newshive.vercel.app' />
-        <meta property='og:image:width' content='1366' />
-        <meta property='og:image:height' content='637' />
         <Head />
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
