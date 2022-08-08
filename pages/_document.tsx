@@ -35,7 +35,7 @@ export default class Document extends NextDocument {
           property="og:description" content='Newshive is a news web application where you get the latest news on health, finance, sports, politics and entertainment' />
         <meta property="og:url" content='https://newshive.vercel.app' />
         <meta property='og:image:width' content='1366' />
-        <meta property='og:image:height' content='63  7' />
+        <meta property='og:image:height' content='637' />
         <Head />
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
