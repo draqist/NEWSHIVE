@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <RecoilRoot>
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence exitBeforeEnter initial={false}>
           <ChakraProvider theme={theme}>
             <Component {...pageProps} />
           </ChakraProvider>

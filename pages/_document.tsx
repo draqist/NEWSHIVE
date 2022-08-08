@@ -17,19 +17,25 @@ export default class Document extends NextDocument {
           rel="stylesheet"
         />
         <title>NEWSHIVE</title>
-        <meta name="description" content="An up-to-date news website on the current happenings in the world" />
-        <meta
-          name="Newshive"
-          content="Get the latest,verified news from newshive"
-        />
+        <meta name="description" content="Newshive is a news web application where you get the latest news on health, finance, sports, politics and entertainment"/>
+        <meta property="og:url" content="https://newshive.live"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="NEWSHIVE"/>
+        <meta property="og:description" content="Newshive is a news web application where you get the latest news on health, finance, sports, politics and entertainment"/>
+        <meta property="og:image" content="https://i.ibb.co/Z1QT3sf/newshive.png"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:domain" content="newshive.live"/>
+        <meta property="twitter:url" content="https://newshive.live"/>
+        <meta name="twitter:title" content="NEWSHIVE"/>
+        <meta name="twitter:description" content="Newshive is a news web application where you get the latest news on health, finance, sports, politics and entertainment"/>
+        <meta name="twitter:image" content="https://i.ibb.co/Z1QT3sf/newshive.png"/>
         <meta
           property="og:image" content='https://i.ibb.co/Z1QT3sf/newshive.png' />
         <meta
-          property="og:description" content='DESCRIPTION OF YOUR SITE' />
+          property="og:description" content='Newshive is a news web application where you get the latest news on health, finance, sports, politics and entertainment' />
         <meta property="og:url" content='https://newshive.vercel.app' />
         <meta property='og:image:width' content='1366' />
         <meta property='og:image:height' content='63  7' />
-
         <Head />
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
