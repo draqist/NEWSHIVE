@@ -10,7 +10,7 @@ This is a web-application built using NextJS, ChakraUI, and Typescript. NEWSHIVE
 
 
 
-###If you'd like to take a peek at how this website was achieved, below is a guideline to how you can get the application running on your local machine
+### If you'd like to take a peek at how this website was achieved, below is a guideline to how you can get the application running on your local machine
 
 
 ## Getting Started
